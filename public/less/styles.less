@@ -88,6 +88,25 @@ a, a:hover {
     text-align: left !important;
 }
 
+.no-header {
+    margin: 20px 0 0 0;
+}
+
+.top-border {
+    border-top: 1px solid @border_color;
+    padding-top: 20px;
+    margin-top: 10px;
+
+    .nav {
+        padding-left: 20px;
+    }
+}
+
+.lnk-edit {
+    padding: 0 10px 0 0;
+    font-size: 13px;
+    font-weight: normal;
+}
 
 // main styles
 
@@ -184,6 +203,15 @@ a, a:hover {
         }
     }
 
+    .pane-left-col-wide {
+        .col(6);
+    }
+
+    .pane-right-col-narrow {
+        .col(2);
+        width: 180px;
+    }
+
     .lnk-tag {
         padding: 0 0.3em;
         color: @grey_color;
@@ -195,7 +223,8 @@ a, a:hover {
     margin-top: 10px;
 }
 
-.page-header {
+.page-header-main {
+    margin: 18px 0;
     padding: 0 10px;
     border-bottom: none;
     
@@ -257,8 +286,21 @@ a, a:hover {
     margin-left: 20px;
 }
 
+.userpic {
+    margin-bottom: 10px;
+}
+
+#chart-graph-mood {
+    width: 430px;
+    height: 200px;
+}
+
 #chart-graph {
     width: 680px;
+}
+
+.article-list > article {
+    padding-bottom: 20px;
 }
 
 .graph1 {
