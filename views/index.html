@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Spoutlets &mdash; Main Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/bootstrap.css">
+
+        <!--[if lt IE 9]>
+            <script src="../public/js/libs/iepp.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+    
+    <div class="container">
+    
+         <header>
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+
+                        <a href="" class="brand"><strong>Spoutlets</strong>.com</a>
+
+                        <ul class="nav pull-right">
+                            <li><a href=""><i class="icon-edit icon-white"></i> Settings</a></li>
+                            <li><a href=""><i class="icon-off icon-white"></i> Logout</a></li>
+                        </ul>                 
+                    </div>
+                </div>
+            </div>
+        </header>       
+   
+        <div id="main" class="clearfix">
+            <div class="row">
+                <div class="page-nav">
+                    <div class="greetings">
+                        How it's going 
+                        <strong>deadbyshrubbery</strong>
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#" data-toggle="tab">Mood Tools</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="tab">Social Therapy</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="tab">You time</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    	
+            <div class="row">
+                <div class="tabbable tabs-left nav-left-col">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#A1" data-toggle="tab"><i class="icon-user"></i> Tracker</a>
+                        </li>
+                        <li>
+                            <a href="#B1" data-toggle="tab"><i class="icon-list-alt"></i> Trends</a>
+                        </li>
+                        <li>
+                            <a href="#C1" data-toggle="tab"><i class="icon-map-marker"></i> Map</a>
+                        </li>
+                    </ul>
+
+                </div>
+              
+                <div class="tab-content">
+                    <div class="tab-pane active" id="A1">
+                        <header class="page-header">
+                            <h1 class="ico-tracker-header">Tracker</h1>
+                        </header>
+
+                        <div class="row">
+                            <div class="pane-left-col">
+                                <section>
+                                    <hgroup class="section-header">
+                                        <h2>Mood Status</h2>
+                                    </hgroup>
+                                    <div class="mood-status centered">
+                                        <img src="../public/img/moods/happy.png" width="120" height="120" alt="" />
+                                        <form action="#" method="post">
+                                            <button type="submit" class="btn btn-primary">Rate your mood</button>
+                                        </form>
+                                    </div>
+                                </section> <!-- end of tab-pane section -->                            
+                            </div>
+
+                            <div class="pane-right-col">
+                                <section>
+                                    <hgroup class="section-header">
+                                        <h2>Mood Tags</h2>
+                                        <h4>Why are you feeling this way?</h4>
+                                    </hgroup>
+                                    <div class="form-horizontal">
+                                        <form action="#" method="post">
+                                                <input type="text" class="input-max" id="feelings" value="Because of&hellip;" />
+                                                <p class="help-block">The reason why #</p>
+                                                <div class="control-group">
+                                                    <button type="submit" class="btn btn-primary pull-right">Tag it !</button>
+                                                </div>
+                                        </form>
+                                    </div>
+                                    <div class="well">
+                                        <a href="" class="lnk-tag" style="font-size: 1em;">#billie</a>
+                                        <a href="" class="lnk-tag" style="font-size: 1.5em;">#finals</a>
+                                        <a href="" class="lnk-tag" style="font-size: 2em;">#money</a>
+                                        <a href="" class="lnk-tag" style="font-size: 3.5em;">#tryots</a>
+                                        <a href="" class="lnk-tag" style="font-size: 1em;">#relationship</a>
+                                        <a href="" class="lnk-tag" style="font-size: 2em;">#4.0</a>
+                                        <a href="" class="lnk-tag" style="font-size: 1.5em;">#tired</a>
+                                    </div>
+                                </section> <!-- end of tab-pane section --> 
+                            </div>
+                        </div>
+
+                    </div> <!-- end of the tab-pane A1 -->
+
+                    <div class="tab-pane" id="B1">
+                        <header class="page-header">
+                            <h1 class="ico-trends-header">Trends</h1>
+                        </header>
+
+                        <section>
+                            <hgroup class="section-header">
+                                <h2>Mood Graph <a href="#" class="btn btn-success pull-right">Share with therapist</a></h2>
+                            </hgroup>
+                            
+                            <form action="#" method="post">
+                                <h4 class="inline">How you've been feeling this past</h4>
+                                <select class="span2">
+                                    <option>&mdash; week &mdash;</option>
+                                    <option>&mdash; month &mdash;</option>
+                                    <option>&mdash; year &mdash;</option>
+                                </select>
+                            </form>      
+                          
+                            <div id="chart-graph">
+                                <!-- chart graph placeholder -->
+                            </div>
+                        </section> <!-- end of tab-pane section -->
+                     
+                        <section>
+                            <hgroup class="section-header">
+                                <h2>Mood Meters</h2>
+                                <h4>How your mood compares with others this month</h4>
+                            </hgroup>
+                            
+                            <div class="row">
+                                <section class="section-col graph1">
+                                    <!-- -->
+                                </section>
+                                <section class="section-col graph2">
+                                    <!-- -->
+                                </section>
+                                <section class="section-col graph3">
+                                    <!-- -->
+                                </section>                        
+                            </div>
+                        </section> <!-- end of tab-pane section -->
+                    </div> <!-- end of the tab-pane B1 -->
+
+                    <div class="tab-pane" id="C1">
+                        <header class="page-header">
+                            <h1 class="ico-map-header">Map</h1>
+                        </header>
+
+                        <section>
+                            <hgroup class="section-header">
+                                <h2>Mood Map</h2>
+                                <h4>How other campuses are feeling.</h4>
+                            </hgroup>
+                            <div class="google-map-static">
+                                    <img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&amp;zoom=12&amp;size=690x440&amp;sensor=false" alt="" />
+                            </div>
+                        </section> <!-- end of tab-pane section -->
+
+                        <section>
+                            <hgroup class="section-header">
+                                <h5>Update location</h5>
+                                <h6>Share your location with Spoutlets to help us update the Mood map.</h6>
+                            </hgroup>
+                            <div class="form-horizontal">
+                                <form action="/" method="post">
+                                    <div class="control-group">
+                                        <label class="control-label text-align-left" for="fld-country">Country</label>
+                                        <div class="controls">
+                                            <select id="fld-country" class="input-small">
+                                                <option>USA</option>
+                                                <option>USA</option>
+                                                <option>USA</option>
+                                                <option>USA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label text-align-left" for="fld-state">State</label>
+                                        <div class="controls">
+                                            <select id="fld-state" class="input-small">
+                                                <option>MA</option>
+                                                <option>MA</option>
+                                                <option>MA</option>
+                                                <option>MA</option>
+                                            </select>
+                                        </div>
+                                    </div>    
+                                    <div class="control-group">
+                                        <label class="control-label text-align-left" for="fld-university">University</label>
+                                        <div class="controls">
+                                            <select id="fld-university" class="input-xlarge">
+                                                <option>Massachusetts Institute of Technology</option>
+                                                <option>Massachusetts Institute of Technology</option>
+                                                <option>Massachusetts Institute of Technology</option>
+                                                <option>Massachusetts Institute of Technology</option>
+                                            </select>
+                                        </div>
+                                    </div>                                                                      
+                                </form>
+                            </div>
+                        </section>
+                    </div> <!-- end of the tab-pane C1 -->
+                </div>
+             </div>
+        </div>
+        
+        <footer>
+            <div class="row">
+                <div class="footer-col">
+                    <h4>The Company</h4>
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">FAQs</a></li>
+                        <li><a href="">Terms of Use</a></li>
+                        <li><a href="">Privacy</a></li>
+                        <li><a href="">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <address>
+                        Telemend <br />
+                        395 Page Mill Road <br />
+                        Palo Alto, CA 94306 <br />
+                        <a href="mailto:">Support Email</a>
+                        <strong class="phone">
+                            Phone: 
+                            <span>1.800.273.TALK (8255)</span>
+                        </strong>
+                    </address>
+                </div>  
+                <div class="footer-col">
+                    <h4>Our Blog</h4>
+                    <p>
+                        Virginis in modo genito in modo compungi mulierem ubi confudit huc apud brevi terminatur se ad nomine Hesterna. Audito doctrinis paruit unum conversa ait.
+                        <a href="" class="read-more">read more&hellip;</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Disclaimer</h4>
+                    <p>
+                        Virginis in modo genito in modo compungi mulierem ubi confudit huc apud brevi terminatur se ad nomine Hesterna. 
+                    </p>
+                    <p>
+                        Audito doctrinis paruit unum conversa ait.
+                    </p>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="pull-left">
+                    <span>Copyright &copy; 2012 <a href="">Spoutlets.com</a></span>
+                </div>
+                    <a href="" class="logo-footer pull-right">Spoutlets.com</a>
+            </div>
+        </footer>
+        
+    </div>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="../public/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+    <script src="../public/js/libs/bootstrap.min.js"></script>
+    <script src="../public/js/libs/highcharts.js"></script>
+    <script src="../public/js/script.js"></script>
+    </body>
+    </html>
