@@ -82,6 +82,7 @@
                                 <section>
                                     <hgroup class="section-header">
                                         <h2>Mood Status</h2>
+                                        <h4>How are you feeling?</h4>
                                     </hgroup>
                                     <div class="mood-status centered">
                                         <img src="../public/img/moods/happy.png" width="120" height="120" alt="" />
@@ -96,24 +97,24 @@
                                 <section>
                                     <hgroup class="section-header">
                                         <h2>Mood Tags</h2>
-                                        <h4>Why are you feeling this way?</h4>
+                                        <h4>Why are you feeling that way?</h4>
                                     </hgroup>
                                     <div class="form-horizontal">
                                         <form action="#" method="post">
-                                                <input type="text" class="input-max" id="feelings" value="Because of&hellip;" />
-                                                <p class="help-block">The reason why #</p>
+                                                <input type="text" class="input-max" id="feelings" placeholder="Because of #job #money" />
+                                                <p class="help-block">Tag reason with #</p>
                                                 <div class="control-group">
-                                                    <button type="submit" class="btn btn-primary pull-right">Tag it !</button>
+                                                    <button type="submit" class="btn btn-primary pull-right">Tag it!</button>
                                                 </div>
                                         </form>
                                     </div>
                                     <div class="well">
                                         <a href="" class="lnk-tag" style="font-size: 1em;">#billie</a>
                                         <a href="" class="lnk-tag" style="font-size: 1.5em;">#finals</a>
-                                        <a href="" class="lnk-tag" style="font-size: 2em;">#money</a>
-                                        <a href="" class="lnk-tag" style="font-size: 3.5em;">#tryots</a>
-                                        <a href="" class="lnk-tag" style="font-size: 1em;">#relationship</a>
                                         <a href="" class="lnk-tag" style="font-size: 2em;">#4.0</a>
+                                        <a href="" class="lnk-tag" style="font-size: 3.5em;">#tryouts</a>
+                                        <a href="" class="lnk-tag" style="font-size: 1em;">#relationship</a>
+                                        <a href="" class="lnk-tag" style="font-size: 2em;">#money</a>
                                         <a href="" class="lnk-tag" style="font-size: 1.5em;">#tired</a>
                                     </div>
                                 </section> <!-- end of tab-pane section --> 
@@ -174,56 +175,25 @@
                         <section>
                             <hgroup class="section-header">
                                 <h2>Mood Map</h2>
-                                <h4>How other campuses are feeling.</h4>
-                            </hgroup>
-                            <div class="google-map-static">
-                                    <img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&amp;zoom=12&amp;size=690x440&amp;sensor=false" alt="" />
-                            </div>
-                        </section> <!-- end of tab-pane section -->
-
-                        <section>
-                            <hgroup class="section-header">
-                                <h5>Update location</h5>
-                                <h6>Share your location with Spoutlets to help us update the Mood map.</h6>
+                                <h4>How other campuses are feeling</h4>
                             </hgroup>
                             <div class="form-horizontal">
-                                <form action="/" method="post">
+                                <form action="/" method="post">   
                                     <div class="control-group">
-                                        <label class="control-label text-align-left" for="fld-country">Country</label>
-                                        <div class="controls">
-                                            <select id="fld-country" class="input-small">
-                                                <option>USA</option>
-                                                <option>USA</option>
-                                                <option>USA</option>
-                                                <option>USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label text-align-left" for="fld-state">State</label>
-                                        <div class="controls">
-                                            <select id="fld-state" class="input-small">
-                                                <option>MA</option>
-                                                <option>MA</option>
-                                                <option>MA</option>
-                                                <option>MA</option>
-                                            </select>
-                                        </div>
-                                    </div>    
-                                    <div class="control-group">
-                                        <label class="control-label text-align-left" for="fld-university">University</label>
+                                        <label class="control-label text-align-left" for="fld-university">Select a campus</label>
                                         <div class="controls">
                                             <select id="fld-university" class="input-xlarge">
                                                 <option>Massachusetts Institute of Technology</option>
-                                                <option>Massachusetts Institute of Technology</option>
-                                                <option>Massachusetts Institute of Technology</option>
-                                                <option>Massachusetts Institute of Technology</option>
+                                                <option>Boston University</option>
                                             </select>
                                         </div>
                                     </div>                                                                      
                                 </form>
+                            </div>                            
+                            <div class="google-map-static">
+                                    <img src="http://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&amp;zoom=12&amp;size=690x440&amp;sensor=false" alt="" />
                             </div>
-                        </section>
+                        </section> <!-- end of tab-pane section -->
                     </div> <!-- end of the tab-pane C1 -->
                 </div>
              </div>
