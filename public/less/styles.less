@@ -20,6 +20,8 @@
 @bg_highlight_color: #e6e6e6;
 @hgroup_color: #dcf3f9;
 @grey_color: #808080;
+@dark_grey_color: #404040;
+@light_grey_color: #aaa;
 
 
 //custom-mixins
@@ -27,6 +29,12 @@
 .col (@col) {
     #gridSystem > .gridColumn(@gridGutterWidth);
     #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, @col); 
+}
+
+.round-borders(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
 }
 
 
@@ -57,6 +65,10 @@
 
 .ico-map-header:after {
     background-position: -80px -60px;
+}
+
+.ico-vent-stream-header:after {
+    background-position: -40px -60px;
 }
 
 
@@ -106,6 +118,10 @@ a, a:hover {
     padding: 0 10px 0 0;
     font-size: 13px;
     font-weight: normal;
+}
+
+.bg-white {
+    background-color: #fff;
 }
 
 // main styles
@@ -170,11 +186,56 @@ a, a:hover {
     .nav-tabs {
         float: right !important;
         margin: 0 -1px 0 0 !important;
+
     }
 
-   a {
+    a {
         width: 180px;
         background-color: @bg_highlight_color;
+    }
+
+
+    .well {
+        .pull-right;
+        clear: both;
+        width: 145px;
+        margin: 30px 20px 10px 15px;
+        color: @grey_color;
+
+        h5 {
+            color: @grey_color;
+        }
+    }
+
+    .venting-flow {
+
+        a {
+            background-color: transparent;
+        }
+        
+        ul {
+            margin: 20px 0 0 0;
+            padding-bottom: 15px;
+        }
+
+        li {
+            .clearfix;
+
+            margin: 10px 0 20px 0;
+            border-bottom: 1px solid @border_color;
+            
+            > div {
+                margin: 0 0 0 40px;
+            }            
+        }
+
+        .venting-userpic {
+            .pull-left;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 10px 0 0;
+        }
     }
 }
 
@@ -234,6 +295,7 @@ a, a:hover {
         &[class *="ico-"]:before {
             display: none;
         }    
+        
         &[class *="ico-"]:after {
             content: "";
             position: absolute;
@@ -251,12 +313,12 @@ a, a:hover {
     margin: 0 0 20px 0;
 
     h2 {
+        .round-borders(3px);
         padding: 2px 10px;
         line-height: 28px;
         color: #404143;
         background: @hgroup_color;       
         border: 1px solid darken(@hgroup_color, 5%);
-        border-radius: 3px;
     }
     
     h4 {
@@ -299,6 +361,11 @@ a, a:hover {
     width: 680px;
 }
 
+.article-list {
+    clear: both;
+
+}
+
 .article-list > article {
     padding-bottom: 20px;
 }
@@ -315,8 +382,116 @@ a, a:hover {
     background: url(../img/sprite_main.png) -480px -190px no-repeat;
 }
 
+.vent-form {
+    .col(8);
+    width: 640px;
+    padding-bottom: 10px;
 
-footer {
+    textarea {
+        width: 630px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .input-large {
+        width: 190px;
+        margin-right: 10px;
+    }
+}
+
+.vent-search {
+    .input-large {
+        width: 200px;
+    }
+}
+
+.vent {
+    margin: 0 0 0 20px;
+
+    &:first-child {
+         padding-top: 20px;
+    }
+
+   > aside {
+        .pull-left;
+        .round-borders(5px);
+
+        position: relative;
+        margin: 0 25px 0 0;
+        width: 85px;
+        height: 75px;
+        background-color: @dark_grey_color;
+
+        span {
+            display: block;
+            padding: 15px 15px 12px 15px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 30px;
+
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 25px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid @dark_grey_color;            
+        }
+    }
+
+    header {
+        margin: 0 0 0 120px;
+        padding: 3px 0 15px 0;
+        color: @grey_color;
+
+        .author {
+            margin: 0 30px 0 0;
+        }
+
+        .label {
+            margin-left: 5px;
+        }
+    }
+
+    p {
+        margin: 0 0 0 120px;
+    }
+
+
+    footer {
+        margin: 20px 0 20px 120px;
+        padding: 0 0 3px 0;
+        color: @light_grey_color;
+        border-bottom: 1px solid @light_grey_color;
+
+        a {
+            color: @light_grey_color;
+        }
+
+        span {
+            margin: 0 0 0 40px;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: -20px;
+                top: 2px;
+                width: 1px;
+                height: 15px;
+                background-color: @light_grey_color;
+            }
+        }
+    }
+}
+
+
+.container > footer {
     margin: 50px 0 0 0;
     
     h4 {
