@@ -3745,10 +3745,19 @@ a:hover {
 .top-border .nav {
   padding-left: 20px;
 }
+.nav-pills .nav-header {
+  padding: 9px 15px 5px 15px;
+}
 .lnk-edit {
   padding: 0 10px 0 0;
   font-size: 13px;
   font-weight: normal;
+}
+.dropdown-label {
+  float: left;
+  display: block;
+  padding: 10px 5px;
+  color: #808080;
 }
 .bg-white {
   background-color: #fff;
@@ -4069,6 +4078,51 @@ a:hover {
   width: 1px;
   height: 15px;
   background-color: #aaaaaa;
+}
+.vent .form-response {
+  margin-top: 30px;
+  border-bottom: none;
+}
+.vent .form-response textarea {
+  width: 550px;
+  height: 80px;
+}
+.comments li {
+  margin: 35px 0;
+}
+.comments li header {
+  padding: 3px 0 15px 0;
+  color: #808080;
+}
+.comments li header .author {
+  margin: 0 30px 0 0;
+}
+.comments li p {
+  margin-bottom: 5px;
+}
+.comments li footer {
+  margin: 20px 0;
+  padding: 5px 0;
+  color: #808080;
+  border-bottom: 1px solid #dcdcdc;
+}
+.comments li footer .voting {
+  float: left;
+  display: inline-block;
+  width: 60px;
+}
+.comments li footer .thumb-up,
+.comments li footer .thumb-down {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/sprite_main.png) 0 -110px no-repeat;
+}
+.comments li footer .thumb-down {
+  background-position: -30px -110px;
+}
+.comments li > ul {
+  margin-left: 60px;
 }
 .container > footer {
   margin: 50px 0 0 0;
