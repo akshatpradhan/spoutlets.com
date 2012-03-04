@@ -3709,6 +3709,9 @@ a.thumbnail:hover {
 .ico-map-header:after {
   background-position: -80px -60px;
 }
+.ico-vent-stream-header:after {
+  background-position: -40px -60px;
+}
 body {
   background: #f9f9f9 !important;
 }
@@ -3746,6 +3749,9 @@ a:hover {
   padding: 0 10px 0 0;
   font-size: 13px;
   font-weight: normal;
+}
+.bg-white {
+  background-color: #fff;
 }
 .container > header {
   height: 70px;
@@ -3808,6 +3814,46 @@ a:hover {
 .nav-left-col a {
   width: 180px;
   background-color: #e6e6e6;
+}
+.nav-left-col .well {
+  float: right;
+  clear: both;
+  width: 145px;
+  margin: 30px 20px 10px 15px;
+  color: #808080;
+}
+.nav-left-col .well h5 {
+  color: #808080;
+}
+.nav-left-col .venting-flow a {
+  background-color: transparent;
+}
+.nav-left-col .venting-flow ul {
+  margin: 20px 0 0 0;
+  padding-bottom: 15px;
+}
+.nav-left-col .venting-flow li {
+  *zoom: 1;
+  margin: 10px 0 20px 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+.nav-left-col .venting-flow li:before,
+.nav-left-col .venting-flow li:after {
+  display: table;
+  content: "";
+}
+.nav-left-col .venting-flow li:after {
+  clear: both;
+}
+.nav-left-col .venting-flow li > div {
+  margin: 0 0 0 40px;
+}
+.nav-left-col .venting-flow .venting-userpic {
+  float: left;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 0;
 }
 .tab-content {
   float: left;
@@ -3879,12 +3925,14 @@ a:hover {
   margin: 0 0 20px 0;
 }
 .section-header h2 {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   padding: 2px 10px;
   line-height: 28px;
   color: #404143;
   background: #dcf3f9;
   border: 1px solid #c6ecf5;
-  border-radius: 3px;
 }
 .section-header h4 {
   margin: 30px 0;
@@ -3917,6 +3965,9 @@ a:hover {
 #chart-graph {
   width: 680px;
 }
+.article-list {
+  clear: both;
+}
 .article-list > article {
   padding-bottom: 20px;
 }
@@ -3929,33 +3980,123 @@ a:hover {
 .graph3 {
   background: url(../img/sprite_main.png) -480px -190px no-repeat;
 }
-footer {
+.vent-form {
+  float: left;
+  margin-left: 20px;
+  width: 620px;
+  width: 640px;
+  padding-bottom: 10px;
+}
+.vent-form textarea {
+  width: 630px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+.vent-form .input-large {
+  width: 190px;
+  margin-right: 10px;
+}
+.vent-search .input-large {
+  width: 200px;
+}
+.vent {
+  margin: 0 0 0 20px;
+}
+.vent:first-child {
+  padding-top: 20px;
+}
+.vent > aside {
+  float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 25px 0 0;
+  width: 85px;
+  height: 75px;
+  background-color: #404040;
+}
+.vent > aside span {
+  display: block;
+  padding: 15px 15px 12px 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+}
+.vent > aside:after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 25px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #404040;
+}
+.vent header {
+  margin: 0 0 0 120px;
+  padding: 3px 0 15px 0;
+  color: #808080;
+}
+.vent header .author {
+  margin: 0 30px 0 0;
+}
+.vent header .label {
+  margin-left: 5px;
+}
+.vent p {
+  margin: 0 0 0 120px;
+}
+.vent footer {
+  margin: 20px 0 20px 120px;
+  padding: 0 0 3px 0;
+  color: #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+}
+.vent footer a {
+  color: #aaaaaa;
+}
+.vent footer span {
+  margin: 0 0 0 40px;
+  position: relative;
+}
+.vent footer span:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 2px;
+  width: 1px;
+  height: 15px;
+  background-color: #aaaaaa;
+}
+.container > footer {
   margin: 50px 0 0 0;
 }
-footer h4 {
+.container > footer h4 {
   margin: 0 0 20px 0;
 }
-footer a {
+.container > footer a {
   color: #000;
 }
-footer a[href*="mailto:"] {
+.container > footer a[href*="mailto:"] {
   text-decoration: underline;
 }
-footer .footer-col {
+.container > footer .footer-col {
   float: left;
   margin-left: 20px;
   width: 220px;
 }
-footer .read-more {
+.container > footer .read-more {
   color: #8e8e8e;
 }
-footer .phone {
+.container > footer .phone {
   display: block;
   padding: 5px 0;
   font-size: 14px;
   text-transform: uppercase;
 }
-footer .phone span {
+.container > footer .phone span {
   font-size: 16px;
   padding: 5px 0;
   display: block;
