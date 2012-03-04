@@ -83,13 +83,24 @@
                                     </hgroup>
                                     <div class="mood-status centered">
                                         <img src="../public/img/moods/happy.png" width="120" height="120" alt="" />
-                                        <form action="#" method="post">
-                                            <button type="submit" class="btn btn-primary">Rate your mood</button>
-                                        </form>
+                                            <a href="#mood-rate" class="btn btn-primary" data-toggle="modal">Rate your mood</a>
+                                    </div>
+
+                                    <div class="modal hide fade" id="mood-rate">
+                                       <div class="wrapper-modal">
+                                            <hgroup class="section-header">
+                                                <h2>Select the state of your mood at this moment or day</h2>
+                                            </hgroup>
+                                            <div class="mood-form">
+                                                <img src="../public/img/placeholders/mood-status.png" width="900" height="180" />
+                                            </div>
+                                            <div class="contro1l-group centered">
+                                                <a href="#" class="btn btn-primary" data-dismiss="modal">Select</a>
+                                            </div>
+                                       </div>
                                     </div>
                                 </section> <!-- end of tab-pane section -->                            
                             </div>
-
                             <div class="pane-right-col">
                                 <section>
                                     <hgroup class="section-header">
