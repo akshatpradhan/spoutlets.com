@@ -114,10 +114,21 @@ a, a:hover {
     }
 }
 
+.nav-pills .nav-header {
+    padding: 9px 15px 5px 15px;
+}
+
 .lnk-edit {
     padding: 0 10px 0 0;
     font-size: 13px;
     font-weight: normal;
+}
+
+.dropdown-label {
+    float: left;
+    display: block;
+    padding: 10px 5px;
+    color: @grey_color;
 }
 
 .bg-white {
@@ -488,7 +499,67 @@ a, a:hover {
             }
         }
     }
+
+    .form-response {
+        margin-top: 30px;
+        border-bottom: none;
+        textarea {
+            width: 550px;      
+            height: 80px;
+        }
+    }
 }
+
+
+.comments {
+    
+    li {
+        margin: 35px 0;
+
+
+        header {
+            padding: 3px 0 15px 0;
+            color: @grey_color;
+
+            .author {
+                margin: 0 30px 0 0;
+            }
+        }
+
+        p {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            margin: 20px 0;
+            padding: 5px 0;
+            color: @grey_color;
+            border-bottom: 1px solid @border_color;
+
+            .voting {
+                float: left;
+                display: inline-block;
+                width: 60px;
+            }
+
+            .thumb-up, .thumb-down {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: url(../img/sprite_main.png) 0 -110px no-repeat;
+            }
+
+            .thumb-down {
+                background-position: -30px -110px;
+            }
+        }
+
+        > ul {
+            margin-left: 60px;
+        }
+    }
+}
+
 
 
 .container > footer {
