@@ -110,4 +110,13 @@ $(document).ready(function() {
       });
    }     
 
+// Issue #23: Relate Button Increase by 1
+
+$(".btn-relate").click(function() {
+   var $elem = $(this).parent().find('> span');
+   var currentValue = parseFloat($elem.html(), 10);
+   $elem.fadeOut('fast', function() { $elem.html(++currentValue).fadeIn('fast') });
+   return false;
+})
+
 });
