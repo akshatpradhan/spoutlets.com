@@ -374,11 +374,39 @@ a, a:hover {
 
 .article-list {
     clear: both;
-
 }
 
 .article-list > article {
     padding-bottom: 20px;
+}
+
+.lnk-block {
+    color: #333333;
+}
+
+.lnk-block:hover {
+    text-decoration: none;
+}
+
+.txt-link {
+    color: #0088cc;
+    -webkit-transition-property: color;
+    -webkit-transition-duration: .5s;
+    -moz-transition-property: color;
+    -moz-transition-duration: .5s;  
+    -o-transition-property: color;
+    -o-transition-duration: .5s;        
+}
+
+.lnk-block:hover > .txt-link {
+    color: #005580;
+    text-decoration: underline !important;
+    -webkit-transition-property: color;
+    -webkit-transition-duration: .5s;
+    -moz-transition-property: color;
+    -moz-transition-duration: .5s;  
+    -o-transition-property: color;
+    -o-transition-duration: .5s;        
 }
 
 .graph1 {
