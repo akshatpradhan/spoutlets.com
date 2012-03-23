@@ -27,8 +27,7 @@
 //custom-mixins
 
 .col (@col) {
-  #gridSystem > .gridColumn(@gridGutterWidth);
-  #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, @col); 
+  .makeColumn(@col);
 }
 
 .round-borders(@radius) {
@@ -137,6 +136,10 @@ a, a:hover {
 
 // main styles
 
+.navbar .container {
+  width: 940px;
+}
+
 .container > header {
   height: @header_height;
     
@@ -180,7 +183,7 @@ a, a:hover {
   .nav {
     .col(8);
 
-    margin-top: 15px;
+    margin-top: 11px;
     font-size: 14px;       
         
     a {
