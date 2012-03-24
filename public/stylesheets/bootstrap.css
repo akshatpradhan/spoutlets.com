@@ -4128,8 +4128,10 @@ a:hover {
   padding-top: 20px;
 }
 .nav-left-col .nav-tabs {
+  position: relative;
   float: right !important;
   margin: 0 -1px 0 0 !important;
+  z-index: 9999;
 }
 .nav-left-col a {
   width: 180px;
@@ -4179,10 +4181,18 @@ a:hover {
   float: left;
   margin-left: 20px;
   width: 700px;
+  position: relative;
   width: 680px !important;
-  margin: 20px 0 !important;
-  padding: 0 0 0 20px;
-  border-left: 1px solid #dcdcdc;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+.tab-content .vertical-border {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background: #dcdcdc;
+  width: 1px;
+  height: 100%;
 }
 .tab-content section {
   margin-bottom: 20px;
@@ -4191,6 +4201,7 @@ a:hover {
   float: left;
   margin-left: 20px;
   width: 220px;
+  margin-left: 19px;
 }
 .tab-content .pane-right-col {
   float: left;
@@ -4290,31 +4301,6 @@ a:hover {
 }
 .article-list > article {
   padding-bottom: 20px;
-}
-.lnk-block {
-  color: #333333;
-}
-.lnk-block:hover {
-  text-decoration: none;
-}
-.txt-link {
-  color: #0088cc;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;
-  -o-transition-property: color;
-  -o-transition-duration: .5s;
-}
-.lnk-block:hover > .txt-link {
-  color: #005580;
-  text-decoration: underline !important;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;
-  -o-transition-property: color;
-  -o-transition-duration: .5s;
 }
 .graph1 {
   background: url(../img/sprite_main.png) 0 -190px no-repeat;

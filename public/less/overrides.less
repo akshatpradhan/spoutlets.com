@@ -26,10 +26,6 @@
 
 //custom-mixins
 
-.col (@col) {
-  .makeColumn(@col);
-}
-
 .round-borders(@radius) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -144,7 +140,7 @@ a, a:hover {
   height: @header_height;
     
   .logo {
-    .col(4);
+    .makeColumn(4);
 
     display: block;
     width: 160px;
@@ -160,14 +156,14 @@ a, a:hover {
 }
 
 .page-nav {
-  .col(12);
+  .makeColumn(12);
 
   height: 50px;
   background: @bg_color;
   border-bottom: 1px solid @border_color;
     
   .greetings {
-    .col(3);
+    .makeColumn(3);
 
     display: block;
     margin: 5px 0 0 0;
@@ -181,7 +177,7 @@ a, a:hover {
   }
 
   .nav {
-    .col(8);
+    .makeColumn(8);
 
     margin-top: 11px;
     font-size: 14px;       
@@ -193,20 +189,21 @@ a, a:hover {
 }
 
 .nav-left-col {
-  .col(3);
+  .makeColumn(3);
 
   padding-top: 20px;
     
   .nav-tabs {
+    position: relative;
     float: right !important;
     margin: 0 -1px 0 0 !important;
+    z-index: 9999;
   }
 
   a {
     width: 180px;
     background-color: @bg_highlight_color;
   }
-
 
   .well {
     .pull-right;
@@ -255,23 +252,34 @@ a, a:hover {
 }
 
 .tab-content {
-  .col(9);
+  .makeColumn(9);
 
+  position: relative;
   width: 680px !important;
-  margin: 20px 0 !important;
-  padding: 0 0 0 20px;
-  border-left: 1px solid @border_color;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+
+  .vertical-border {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    background: @border_color;
+    width: 1px;
+    height: 100%;
+  }
   
   section {
     margin-bottom: 20px;
   }
 
   .pane-left-col {
-    .col(3);
+    .makeColumn(3);
+
+    margin-left: 19px;
   }
 
   .pane-right-col {
-    .col(6);
+    .makeColumn(6);
     
     width: 440px;
 
@@ -281,11 +289,11 @@ a, a:hover {
   }
 
   .pane-left-col-wide {
-    .col(6);
+    .makeColumn(6);
   }
 
   .pane-right-col-narrow {
-    .col(2);
+    .makeColumn(2);
     
     width: 180px;
   }
@@ -387,35 +395,6 @@ a, a:hover {
   padding-bottom: 20px;
 }
 
-.lnk-block {
-  color: #333333;
-}
-
-.lnk-block:hover {
-  text-decoration: none;
-}
-
-.txt-link {
-  color: #0088cc;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;  
-  -o-transition-property: color;
-  -o-transition-duration: .5s;        
-}
-
-.lnk-block:hover > .txt-link {
-  color: #005580;
-  text-decoration: underline !important;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;  
-  -o-transition-property: color;
-  -o-transition-duration: .5s;        
-}
-
 .graph1 {
   background: url(../img/sprite_main.png) 0 -190px no-repeat;
 }
@@ -429,7 +408,7 @@ a, a:hover {
 }
 
 .vent-form {
-  .col(8);
+  .makeColumn(8);
   
   position: relative;
   width: 640px;
@@ -642,7 +621,7 @@ a[href="#mood-rate"] {
   }
 
   .footer-col {
-    .col(3);
+    .makeColumn(3);
   }
     
   .read-more {
