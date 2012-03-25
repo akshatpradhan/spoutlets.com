@@ -162,7 +162,6 @@ var ventFormActions = function(params) {
           "complete": function() { $controls.animate({'opacity': 1}, 200); $textarea.addClass('expanded') },
           "queue": false
         });
-      console.log('Le display controls');
     },
 
     hideControls: function() {
@@ -176,7 +175,6 @@ var ventFormActions = function(params) {
           "duration": 300,
           "queue": false
         })
-      console.log('Le hidding controls');
     }
   }
 
@@ -204,5 +202,71 @@ if ($('.vent-form textarea').length) {
      ventForm.collapse();
   });
 }
+
+//Issue #41: Tag it
+
+var tagFormActions = function(params) {
+  var $container = $(params.container),
+        $tagsContainer = $(params.tagsContainer),
+        reasonString = '',
+        hashesArray = [];
+  
+  var that = {
+    tagIt: function() {
+      reasonString = $container.find('#feelings')[0].value;
+      hashesArray = reasonString.match(/#\w+/g);
+      that.addHashes(hashesArray);
+    },
+
+    addHashes: function(hashesArray) {
+      if (hashesArray == null) return;
+
+      var currentHashesArray = [];
+      $tagsContainer.find('> a').each(function(index, value) { currentHashesArray.push(value.innerHTML) });
+      
+      $.each(hashesArray, function(index, value) {
+        if (currentHashesArray.indexOf(value) > -1) { 
+          that.IncreaseTagSize(currentHashesArray.indexOf(value)); 
+          return; 
+        };
+        $tagsContainer.animate({ 'opacity': 0 }, 500, function() {
+          var elem = '<a href="#" class="lnk-tag" style="font-size: 14px">' + value + '</a>';
+          $tagsContainer.prepend(elem);
+        });
+      });
+
+      $tagsContainer.animate({ 'opacity': 1 });
+    },
+
+    IncreaseTagSize: function(elemIndex) {
+      $tagsContainer.find('a').eq(elemIndex).animate({'font-size': "+=3px"})
+    }
+  }
+
+  return {
+    tagIt: that.tagIt
+  }
+}
+
+var tagFormParams = {
+  container: '.form-feelings',
+  tagsContainer: '.tag-feelings'
+}
+
+if ($('.form-feelings').length) {
+  var tagForm = new tagFormActions(tagFormParams);
+
+  $(tagFormParams.container).submit(function(e) {
+    e.preventDefault();
+    tagForm.tagIt();
+  });
+}
+
+// Issue #38: Mood Faces on Vent Stream
+
+$('.vent-mood, .mood-options span').click(function() {
+  $(this).parent().parent().find('.mood-options').fadeToggle('slow');
+})
+
 
 });

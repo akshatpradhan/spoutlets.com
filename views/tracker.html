@@ -35,6 +35,7 @@
             <div class="row">
                 <div class="page-nav">
                     <div class="greetings">
+                        <div class="greetings-face greetings-rate10"><!-- --></div>
                         How's it going,
                         <strong>greatbillsofire?</strong>
                     </div>
@@ -83,8 +84,8 @@
                                         <h4 class="centered">How are you feeling?</h4>
                                     </hgroup>
                                     <div class="mood-status centered">
-                                        <img src="../public/img/moods/happy.png" width="120" height="120" alt="" />
-                                            <a href="#mood-rate" class="btn btn-primary" data-toggle="modal">Rate your mood</a>
+                                        <div class="mood-face rate10"><!-- --></div>
+                                        <a href="#mood-rate" class="btn btn-primary" data-toggle="modal">Rate your mood</a>
                                     </div>
                                     <div class="modal hide fade" id="mood-rate">
                                        <div class="wrapper-modal">
@@ -108,7 +109,7 @@
                                         <h4>Why are you feeling that way?</h4>
                                     </hgroup>
                                     <div class="form-horizontal">
-                                        <form action="#" method="post">
+                                        <form action="#" class="form-feelings" method="post">
                                                 <input type="text" class="input-max" id="feelings" placeholder="Because of #job #money" />
                                                 <p class="help-block">Tag reason with #</p>
                                                 <div class="control-group">
@@ -117,13 +118,15 @@
                                         </form>
                                     </div>
                                     <div class="well">
-                                        <a href="" class="lnk-tag" style="font-size: 1em;">#billie</a>
-                                        <a href="" class="lnk-tag" style="font-size: 1.5em;">#finals</a>
-                                        <a href="" class="lnk-tag" style="font-size: 2em;">#4.0</a>
-                                        <a href="" class="lnk-tag" style="font-size: 3.5em;">#tryouts</a>
-                                        <a href="" class="lnk-tag" style="font-size: 1em;">#relationship</a>
-                                        <a href="" class="lnk-tag" style="font-size: 2em;">#money</a>
-                                        <a href="" class="lnk-tag" style="font-size: 1.5em;">#tired</a>
+                                        <div class="tag-feelings">
+                                            <a href="" class="lnk-tag" style="font-size: 13px;">#billie</a>
+                                            <a href="" class="lnk-tag" style="font-size: 16px;">#finals</a>
+                                            <a href="" class="lnk-tag" style="font-size: 24px;">#4.0</a>
+                                            <a href="" class="lnk-tag" style="font-size: 38px;">#tryouts</a>
+                                            <a href="" class="lnk-tag" style="font-size: 15px;">#relationship</a>
+                                            <a href="" class="lnk-tag" style="font-size: 26px;">#money</a>
+                                            <a href="" class="lnk-tag" style="font-size: 30px;">#tired</a>
+                                        </div>
                                     </div>
                                 </section> <!-- end of tab-pane section --> 
                             </div>
