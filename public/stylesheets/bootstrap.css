@@ -4020,6 +4020,111 @@ a.thumbnail:hover {
 .ico-vent-stream-header:after {
   background-position: -40px -60px;
 }
+.mood-face {
+  width: 100px;
+  height: 100px;
+  padding-bottom: 10px;
+  background: url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+.rate4 {
+  background-position: -330px 0;
+}
+.rate10 {
+  background-position: -990px 0;
+}
+.greetings-face {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin: 3px 10px 0 0;
+  vertical-align: top;
+  background: url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+.greetings-rate10 {
+  background-position: -360px -120px;
+}
+.vent-mood {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 60px;
+  height: 60px;
+  margin: 5px auto 0 auto;
+  background: #ffffff url(../img/sprite_moods.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+.vent-rate1 {
+  background-position: 0 -170px;
+}
+.vent-rate4 {
+  background-position: -210px -170px;
+}
+.vent-rate8 {
+  background-position: -490px -170px;
+}
+.vent-rate9 {
+  background-position: -560px -170px;
+}
+.venting-timeline-mood {
+  float: left;
+  display: inline-block;
+  width: 30px !important;
+  height: 30px;
+  margin: 0 10px 0 0;
+  background: url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+.timeline-rate1 {
+  background-position: 0 -120px;
+}
+.timeline-rate4 {
+  background-position: -120px -120px;
+}
+.timeline-rate9 {
+  background-position: -360px -120px;
+}
+.mood-options span {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  padding: 3px !important;
+  margin: 0 5px 0 0;
+  background: #ffffff url(../img/sprite_moods.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+.options-rate1 {
+  background-position: 3px -118px !important;
+}
+.options-rate2 {
+  background: #aaaaaa !important;
+}
+.options-rate3 {
+  background: #aaaaaa !important;
+}
+.options-rate4 {
+  background-position: -118px -118px !important;
+}
+.options-rate5 {
+  background: #aaaaaa !important;
+}
+.options-rate6 {
+  background: #aaaaaa !important;
+}
+.options-rate7 {
+  background: #aaaaaa !important;
+}
+.options-rate8 {
+  background-position: -278px -118px !important;
+}
+.options-rate9 {
+  background-position: -318px -118px !important;
+}
+.options-rate10 {
+  background-position: -358px -118px !important;
+}
 body {
   background: #f9f9f9 !important;
 }
@@ -4104,8 +4209,7 @@ a:hover {
   width: 220px;
   display: block;
   margin: 5px 0 0 0;
-  padding: 1px 0 0 50px;
-  background: url(../img/sprite_main.png) -160px 5px no-repeat;
+  padding: 1px 40px 0 10px;
   color: #808080;
 }
 .page-nav .greetings strong {
@@ -4128,8 +4232,10 @@ a:hover {
   padding-top: 20px;
 }
 .nav-left-col .nav-tabs {
+  position: relative;
   float: right !important;
   margin: 0 -1px 0 0 !important;
+  z-index: 10;
 }
 .nav-left-col a {
   width: 180px;
@@ -4168,21 +4274,22 @@ a:hover {
 .nav-left-col .venting-flow li > div {
   margin: 0 0 0 40px;
 }
-.nav-left-col .venting-flow .venting-userpic {
-  float: left;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin: 0 10px 0 0;
-}
 .tab-content {
   float: left;
   margin-left: 20px;
   width: 700px;
+  position: relative;
   width: 680px !important;
-  margin: 20px 0 !important;
-  padding: 0 0 0 20px;
-  border-left: 1px solid #dcdcdc;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+.tab-content .vertical-border {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background: #dcdcdc;
+  width: 1px;
+  height: 100%;
 }
 .tab-content section {
   margin-bottom: 20px;
@@ -4191,6 +4298,7 @@ a:hover {
   float: left;
   margin-left: 20px;
   width: 220px;
+  margin-left: 19px;
 }
 .tab-content .pane-right-col {
   float: left;
@@ -4213,12 +4321,16 @@ a:hover {
   width: 180px;
 }
 .tab-content .lnk-tag {
+  display: inline-block;
   padding: 0 0.3em;
   color: #808080;
   line-height: 1.2;
 }
 .mood-status form {
   margin-top: 10px;
+}
+.mood-status .mood-face {
+  margin: -15px 0 0 60px;
 }
 .page-header-main {
   margin: 18px 0;
@@ -4291,31 +4403,6 @@ a:hover {
 .article-list > article {
   padding-bottom: 20px;
 }
-.lnk-block {
-  color: #333333;
-}
-.lnk-block:hover {
-  text-decoration: none;
-}
-.txt-link {
-  color: #0088cc;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;
-  -o-transition-property: color;
-  -o-transition-duration: .5s;
-}
-.lnk-block:hover > .txt-link {
-  color: #005580;
-  text-decoration: underline !important;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;
-  -o-transition-property: color;
-  -o-transition-duration: .5s;
-}
 .graph1 {
   background: url(../img/sprite_main.png) 0 -190px no-repeat;
 }
@@ -4369,15 +4456,15 @@ a:hover {
   position: relative;
   margin: 0 25px 0 0;
   width: 85px;
-  height: 75px;
+  height: 125px;
   background-color: #404040;
 }
 .vent > aside span {
   display: block;
-  padding: 15px 15px 12px 15px;
+  padding: 9px 15px 7px 15px;
   color: #fff;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
 }
 .vent > aside:after {
   content: "";
@@ -4389,6 +4476,39 @@ a:hover {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #404040;
+}
+.vent > aside .mood-options {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  width: 410px;
+  padding: 10px;
+  box-shadow: 0 0 5px #737373;
+  background: #404040;
+}
+.vent > aside .mood-options:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #404040;
+}
+.vent > aside.white-bg {
+  background: #fff;
+}
+.vent > aside.white-bg span {
+  color: #404040;
+}
+.vent > aside.white-bg:after {
+  display: none;
 }
 .vent header {
   margin: 0 0 0 120px;
