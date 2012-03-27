@@ -3995,30 +3995,59 @@ a.thumbnail:hover {
  *
  * Customizations for spoutlets.com
  */
-[class*="ico-"] {
+[class*="icon-"] {
   position: relative;
 }
-[class*="ico-"]:before {
+.nav-left-col [class*="icon-"]:before {
   content: "";
   position: absolute;
   left: -25px;
   top: 0;
   height: 20px;
   width: 25px;
-  background-image: url(../img/sprite_main.png);
   background-repeat: no-repeat;
 }
-.ico-trends-header:after {
-  background-position: -160px -60px;
+.nav-left-col [class*="icon-"] {
+  background-image: url(../img/sprite_main.png);
 }
-.ico-tracker-header:after {
-  background-position: -120px -60px;
+.page-header-main [class*="icon-"] {
+  margin: 5px 0 0 5px;
+  height: 30px;
+  width: 30px;
+  background-image: url(../img/sprite_main.png);
 }
-.ico-map-header:after {
+.icon-log-book {
+  background-position: -50px -30px;
+}
+.icon-stats {
+  background-position: -70px -30px;
+}
+.icon-map-marker {
+  background-position: -90px -30px;
+}
+.icon-conversation {
+  background-position: -110px -30px;
+}
+.icon-vector-path-circle {
+  background-position: -130px -30px;
+}
+.icon-user {
+  background-position: -150px -30px;
+}
+.icon-log-book-header {
+  background-position: -40px -60px;
+}
+.icon-stats-header {
   background-position: -80px -60px;
 }
-.ico-vent-stream-header:after {
-  background-position: -40px -60px;
+.icon-map-marker-header {
+  background-position: -120px -60px;
+}
+.icon-conversation-header {
+  background-position: -160px -60px;
+}
+.icon-user-header {
+  background-position: -240px -60px;
 }
 .mood-face {
   width: 100px;
@@ -4340,19 +4369,6 @@ a:hover {
 .page-header-main h1 {
   display: inline-block;
 }
-.page-header-main h1[class*="ico-"]:before {
-  display: none;
-}
-.page-header-main h1[class*="ico-"]:after {
-  content: "";
-  position: absolute;
-  right: -55px;
-  top: 1px;
-  height: 30px;
-  width: 30px;
-  background-image: url(../img/sprite_main.png);
-  background-repeat: no-repeat;
-}
 .section-header {
   margin: 0 0 20px 0;
 }
@@ -4457,25 +4473,23 @@ a:hover {
   margin: 0 25px 0 0;
   width: 85px;
   height: 125px;
-  background-color: #404040;
+  border: 1px solid #dddddd;
 }
 .vent > aside span {
   display: block;
   padding: 9px 15px 7px 15px;
-  color: #fff;
+  color: #404040;
   font-weight: bold;
   font-size: 25px;
 }
 .vent > aside:after {
   content: "";
   position: absolute;
-  right: -10px;
+  right: -30px;
   top: 25px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #404040;
+  width: 30px;
+  height: 30px;
+  background: url(../img/sprite_main.png) -70px -110px no-repeat;
 }
 .vent > aside .mood-options {
   -webkit-border-radius: 5px;
@@ -4500,15 +4514,6 @@ a:hover {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #404040;
-}
-.vent > aside.white-bg {
-  background: #fff;
-}
-.vent > aside.white-bg span {
-  color: #404040;
-}
-.vent > aside.white-bg:after {
-  display: none;
 }
 .vent header {
   margin: 0 0 0 120px;

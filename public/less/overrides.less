@@ -35,35 +35,73 @@
 
 // ico styles
 
-[class *="ico-"] {
+[class *="icon-"] {
   position: relative;
 }
 
-[class *="ico-"]:before {
+.nav-left-col [class *="icon-"]:before {
   content: "";
   position: absolute;
   left: -25px;
   top: 0;
   height: 20px;
   width: 25px;
-  background-image: url(../img/sprite_main.png);
   background-repeat: no-repeat;
 }
 
-.ico-trends-header:after {
-  background-position: -160px -60px;
+.nav-left-col [class *="icon-"] {
+  background-image: url(../img/sprite_main.png);
 }
 
-.ico-tracker-header:after {
-  background-position: -120px -60px;
+.page-header-main [class *="icon-"] {
+  margin: 5px 0 0 5px;
+  height: 30px;
+  width: 30px;
+  background-image: url(../img/sprite_main.png);
 }
 
-.ico-map-header:after {
+.icon-log-book {
+  background-position: -50px -30px;
+}
+
+.icon-stats {
+  background-position: -70px  -30px;
+}
+
+.icon-map-marker {
+  background-position: -90px -30px;
+}
+
+.icon-conversation {
+  background-position: -110px -30px;
+}
+
+.icon-vector-path-circle {
+  background-position: -130px -30px;
+}
+
+.icon-user {
+  background-position: -150px -30px;
+}
+
+.icon-log-book-header {
+  background-position: -40px -60px;
+}
+
+.icon-stats-header {
   background-position: -80px -60px;
 }
 
-.ico-vent-stream-header:after {
-  background-position: -40px -60px;
+.icon-map-marker-header {
+  background-position: -120px -60px;
+}
+
+.icon-conversation-header {
+  background-position: -160px -60px;
+}
+
+.icon-user-header {
+  background-position: -240px -60px;
 }
 
 .mood-face {
@@ -440,21 +478,6 @@ a, a:hover {
     
   h1 {
     display: inline-block;
-        
-    &[class *="ico-"]:before {
-      display: none;
-    }
-        
-    &[class *="ico-"]:after {
-      content: "";
-      position: absolute;
-      right: -55px;
-      top: 1px;
-      height: 30px;
-      width: 30px;
-      background-image: url(../img/sprite_main.png);
-      background-repeat: no-repeat;
-    }          
   }
 }
 
@@ -583,12 +606,14 @@ a, a:hover {
     margin: 0 25px 0 0;
     width: 85px;
     height: 125px;
-    background-color: @dark_grey_color;
+    //background-color: @dark_grey_color;
+    border: 1px solid lighten(@light_grey_color, 20%);
+
 
     span {
       display: block;
       padding: 9px 15px 7px 15px;
-      color: #fff;
+      color: @dark_grey_color;
       font-weight: bold;
       font-size: 25px;
     }
@@ -596,13 +621,11 @@ a, a:hover {
     &:after {
       content: "";
       position: absolute;
-      right: -10px;
+      right: -30px;
       top: 25px;
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 10px solid @dark_grey_color;            
+      width: 30px;
+      height: 30px;
+      background: url(../img/sprite_main.png) -70px -110px no-repeat;       
     }
 
     .mood-options {
@@ -628,18 +651,6 @@ a, a:hover {
         border-right: 10px solid transparent;
         border-top: 10px solid @dark_grey_color;
       }
-    }
-  }
-
-  > aside.white-bg {
-    background: #fff;
-
-    span {
-      color: @dark_grey_color;
-    }
-
-    &:after {
-      display: none;
     }
   }
 
