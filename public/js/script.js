@@ -134,10 +134,10 @@ var ventFormActions = function(params) {
         'height': expandedHeight
       }, 
       {
-        'complete': that.showControls,
         'duration': 300,
         'queue': false
       });
+      that.showControls();
     },
 
     collapse: function() {
@@ -146,20 +146,21 @@ var ventFormActions = function(params) {
         'height': initialHeight
       }, 
       {
-        'complete': that.hideControls,
         'duration': 300,
         'queue': false
       });      
+      that.hideControls();
     },
 
     showControls: function() {
       $controls.removeClass('hide').css({'opacity': 0}).height(0).stop(true, false)
         .animate({
-          'height': controlsHeight
+          'height': controlsHeight,
+          'opacity': 1
         },
         {
           "duration": 300,
-          "complete": function() { $controls.animate({'opacity': 1}, 200); $textarea.addClass('expanded') },
+          "complete": function() { $textarea.addClass('expanded') },
           "queue": false
         });
     },
