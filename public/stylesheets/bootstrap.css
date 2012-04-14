@@ -4061,17 +4061,6 @@ a.thumbnail:hover {
 .rate10 {
   background-position: -990px 0;
 }
-.greetings-face {
-  float: left;
-  width: 30px;
-  height: 30px;
-  margin: 3px 10px 0 0;
-  vertical-align: top;
-  background: url(../img/sprite_moods.png) 0 0 no-repeat;
-}
-.greetings-rate10 {
-  background-position: -360px -120px;
-}
 .vent-mood {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4224,25 +4213,43 @@ a:hover {
 #main {
   background: #ffffff;
 }
+.greetings {
+  float: left;
+  margin-left: 20px;
+  width: 300px;
+  display: block;
+  width: 250px;
+  margin: 0 0 0 350px;
+  height: 40px;
+  color: #fff;
+}
+.greetings span {
+  display: inline-block;
+  padding: 10px 0 0 0;
+}
+.greetings-face {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  float: left;
+  width: 28px;
+  height: 28px;
+  margin: 5px 10px 0 0;
+  padding: 2px;
+  vertical-align: top;
+  background: #ffffff url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+.greetings-rate10 {
+  background-position: -359px -119px;
+}
 .page-nav {
   float: left;
   margin-left: 20px;
   width: 940px;
   height: 50px;
+  padding: 0 0 0 270px;
   background: #f9f9f9;
   border-bottom: 1px solid #dcdcdc;
-}
-.page-nav .greetings {
-  float: left;
-  margin-left: 20px;
-  width: 220px;
-  display: block;
-  margin: 5px 0 0 0;
-  padding: 1px 40px 0 10px;
-  color: #808080;
-}
-.page-nav .greetings strong {
-  display: block;
 }
 .page-nav .nav {
   float: left;
