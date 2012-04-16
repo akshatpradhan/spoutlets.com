@@ -1,112 +1,272 @@
 var chart;
+
+Highcharts.Chart.prototype.tooltipFormatter = function(mood) {
+  if (mood <= 2) {
+    return 'Very Unhappy'; 
+  } else if (mood <= 4) {
+    return 'Unhappy';
+  } else if (mood <= 6) {
+    return 'Ok';
+  } else if (mood <= 8) {
+    return 'Happy';
+  } else if (mood <= 10) {
+      return 'Very Happy';
+  }
+}
+
 $(document).ready(function() {
   if ($('#chart-graph').length) {
-    chart = new Highcharts.Chart({
-      chart: {
-        renderTo: 'chart-graph',
-        type: 'spline'
+  chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'chart-graph'
+    },
+    title: {
+      text: 'Mood Graph'
+    },
+    subtitle: {
+      text: null
+    },
+    xAxis: {
+      labels: {
+        enabled: false
+      }
+    },
+    yAxis: {
+      title: {
+        text: 'Mood'
       },
-        title: {
-          text: 'Mood Rating'
-        },
-        subtitle: {
-          text: ''   
-        },
-        xAxis: {
-          type: 'datetime',
-          dateTimeLabelFormats: { // don't display the dummy year
-            month: '%e. %b',
-            year: '%b'
+      labels: {
+        enabled: false
+      },
+      min: 0,
+      max: 10,
+      minorGridLineWidth: 0,
+      gridLineWidth: 0,
+      alternateGridColor: null,
+      plotBands: [{ 
+        from: 0,
+        to: 2,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Very Unhappy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 2,
+        to: 4,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Unhappy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, 
+      { 
+        from: 4,
+        to: 6,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Ok',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 6,
+        to: 8,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Happy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 8,
+        to: 10,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Very Happy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }]
+    },
+    tooltip: {
+      formatter: function() {
+          return ''+
+          Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y) +'';
+      },
+    },
+    plotOptions: {
+      spline: {
+        lineWidth: 4,
+        states: {
+          hover: {
+            lineWidth: 5
           }
         },
-        yAxis: {
-          title: {
-            text: 'Rating'
-          },
-          min: 0
-        },
-        tooltip: {
-          formatter: function() {
-            var formater = '<strong>' + this.series.name + '</strong><br/>' + Highcharts.dateFormat('%b %e @ %H:%M', this.x) +': '+ 'Your Mood ' + this.y;
-                      
-            if (this.point.config[2] != undefined) {
-              formater +=  ' <br /><strong>Your comment: </strong><br />' + this.point.config[2].comment;
+        marker: {
+          enabled: false,
+          states: {
+            hover: {
+              enabled: true,
+              symbol: 'circle',
+              radius: 5,
+              lineWidth: 1
             }
-                      
-            return formater;
-                          
           }
         },
-        series: [{
-          name: 'Rating',
-          data: [
-            [Date.UTC(2012, 0, 30, 9, 41), 3],
-            [Date.UTC(2012, 0, 30, 13, 20), 1, {comment: "#angry, #irritated, #annoyed"}],
-            [Date.UTC(2012, 1, 1, 8, 54), 3, {comment: "#bodysucks"}],
-            [Date.UTC(2012, 1, 1, 9, 47), 5, {comment: "#medskickingin"}],
-            [Date.UTC(2012, 1, 2, 7, 22), 5, {comment: "#lesssick"}],
-            [Date.UTC(2012, 1, 3, 11, 02), 5 ],  
-            [Date.UTC(2012, 1, 5, 12, 48), 7  ],
-            [Date.UTC(2012, 1, 6, 10, 16), 5  ],
-            [Date.UTC(2012, 1, 6, 22, 03), 5  ],
-            [Date.UTC(2012, 1, 7, 20, 59), 4  ]
-          ]
-        }]
-    });
-  }
+        pointInterval: 3600000, // one hour
+        pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
+      }
+    },
+    series: [{
+      name: 'Your mood',
+      data: [2,3,4,5,6,7,9,9,9,8,7,7,7,8,6,4,2,7,1,4,9,5,3,2,4,3,3,2,5,3,8,4,9,8,2,5,6,7,8,5,3,2,4,9,7,6,4,4]
+
+    }, {
+      name: 'Other moods',
+      data: [3,3,4,5,6,5,5,5,5,5,5,6,6,8,6,8,6,5,4,5,5,4,6,7,8,9,9,8,8,7,6,6,6,7,5,5,5,5,6,6,7,7,9,9,8,7,6,5,7]
+    }]
+    ,
+    navigation: {
+      menuItemStyle: {
+        fontSize: '10px'
+      }
+    }
+  });
+  };
 
   if ($('#chart-graph-mood').length) {
-    chart = new Highcharts.Chart({
-      chart: {
-        renderTo: 'chart-graph-mood',
-        type: 'spline'
-      },
+  chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'chart-graph-mood'
+    },
+    title: {
+      text: 'Mood Graph'
+    },
+    subtitle: {
+      text: null
+    },
+    xAxis: {
+      labels: {
+        enabled: false
+      }
+    },
+    yAxis: {
       title: {
-        text: 'Mood graph'
+        text: 'Mood'
       },
-      subtitle: {
-        text: ''   
+      labels: {
+        enabled: false
       },
-      xAxis: {
-        type: 'datetime',
-        dateTimeLabelFormats: { // don't display the dummy year
-          month: '%e. %b',
-          year: '%b'
-        }
-      },
-      yAxis: {
-        title: {
-          text: 'Rating'
-        },
-        min: 0
-      },
-      tooltip: {
-        formatter: function() {
-          var formater = '<strong>' + this.series.name + '</strong><br/>' + Highcharts.dateFormat('%b %e @ %H:%M', this.x) +': '+ 'Your Mood ' + this.y;
-                      
-          if (this.point.config[2] != undefined) {
-            formater +=  ' <br /><strong>Your comment: </strong><br />' + this.point.config[2].comment;
+      min: 0,
+      max: 10,
+      minorGridLineWidth: 0,
+      gridLineWidth: 0,
+      alternateGridColor: null,
+      plotBands: [{ 
+        from: 0,
+        to: 2,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Very Unhappy',
+          style: {
+            color: '#606060'
           }
-                      
-          return formater;
         }
-      },
-      series: [{
-        name: 'Rating',
-        data: [
-          [Date.UTC(2012, 0, 30, 9, 41), 3],
-          [Date.UTC(2012, 0, 30, 13, 20), 1, {comment: "#angry, #irritated, #annoyed"}],
-          [Date.UTC(2012, 1, 1, 8, 54), 3, {comment: "#bodysucks"}],
-          [Date.UTC(2012, 1, 1, 9, 47), 5, {comment: "#medskickingin"}],
-          [Date.UTC(2012, 1, 2, 7, 22), 5, {comment: "#lesssick"}],
-          [Date.UTC(2012, 1, 3, 11, 02), 5 ],  
-          [Date.UTC(2012, 1, 5, 12, 48), 7  ],
-          [Date.UTC(2012, 1, 6, 10, 16), 5  ],
-          [Date.UTC(2012, 1, 6, 22, 03), 5  ],
-          [Date.UTC(2012, 1, 7, 20, 59), 4  ]
-        ]
+      }, {
+        from: 2,
+        to: 4,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Unhappy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, 
+      { 
+        from: 4,
+        to: 6,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Ok',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 6,
+        to: 8,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Happy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 8,
+        to: 10,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Very Happy',
+          style: {
+            color: '#606060'
+          }
+        }
       }]
-    });
+    },
+    tooltip: {
+      formatter: function() {
+          return ''+
+          Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y) +'';
+      },
+    },
+    plotOptions: {
+      spline: {
+        lineWidth: 4,
+        states: {
+          hover: {
+            lineWidth: 5
+          }
+        },
+        marker: {
+          enabled: false,
+          states: {
+            hover: {
+              enabled: true,
+              symbol: 'circle',
+              radius: 5,
+              lineWidth: 1
+            }
+          }
+        },
+        pointInterval: 3600000, // one hour
+        pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
+      }
+    },
+    series: [{
+      name: 'Your mood',
+      data: [2,3,4,5,6,7,9,9,9,8,7,7,7,8,6,4,2,7,1,4,9,5,3,2,4,3,3,2,5,3,8,4,9,8,2,5,6,7,8,5,3,2,4,9,7,6,4,4]
+
+    }, {
+      name: 'Other moods',
+      data: [3,3,4,5,6,5,5,5,5,5,5,6,6,8,6,8,6,5,4,5,5,4,6,7,8,9,9,8,8,7,6,6,6,7,5,5,5,5,6,6,7,7,9,9,8,7,6,5,7]
+    }]
+    ,
+    navigation: {
+      menuItemStyle: {
+        fontSize: '10px'
+      }
+    }
+  });
   }     
 
 // Issue #23: Relate Button Increase by 1
