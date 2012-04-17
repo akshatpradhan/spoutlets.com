@@ -4655,3 +4655,19 @@ a[href="#mood-rate"] {
   text-indent: -9999px;
   background: url(../img/sprite_main.png) 0 -140px no-repeat;
 }
+.modal-form h2 {
+  color: #333;
+}
+.modal-form .page-header {
+  margin: 12px 0;
+  padding-bottom: 8px;
+}
+.modal-form .section-header {
+  padding-bottom: 15px;
+}
+.modal-form .section-header h2 {
+  font-size: 16px;
+}
+.modal-form form {
+  padding-bottom: 10px;
+}
