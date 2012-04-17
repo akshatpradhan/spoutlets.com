@@ -4668,3 +4668,6 @@ a[href="#mood-rate"] {
 .modal-form .section-header h2 {
   font-size: 16px;
 }
+.modal-form form {
+  padding-bottom: 10px;
+}
