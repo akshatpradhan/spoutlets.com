@@ -28,27 +28,13 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/meters', function(req, res) {
-    res.render('meters.ejs');
-});    
-app.get('/my-profile', function(req, res) {
-    res.render('my-profile.ejs');
-});   
-app.get('/patterns', function(req, res) {
-    res.render('patterns.ejs');
-});   
-app.get('/tracker', function(req, res) {
-    res.render('tracker.ejs');
-});   
-app.get('/user-profile', function(req, res) {
-    res.render('user-profile.ejs');
-});   
-app.get('/vent-stream', function(req, res) {
-    res.render('vent-stream.ejs');
-});   
-app.get('/vent', function(req, res) {
-    res.render('vent.ejs');
-});   
+app.get('/meters', routes.meters);    
+app.get('/my-profile', routes['my-profile']);   
+app.get('/patterns', routes.patterns);   
+app.get('/tracker', routes.tracker);   
+app.get('/user-profile', routes['user-profile']);   
+app.get('/vent-stream', routes['vent-stream']);   
+app.get('/vent', routes.vent);   
   
 
 http.createServer(app).listen(3000);
