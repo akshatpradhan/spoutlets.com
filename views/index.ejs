@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+      <%- css('/stylesheets/bootstrap') %>
 
         <!--[if lt IE 9]>
             <script src="../public/js/libs/iepp.js"></script>
@@ -117,7 +117,7 @@
            <div class="row">
              <div class="span12">
              <h3>Want to see our progress? 
-               <a href="tracker.html" class="btn btn-primary btn-large">Check it out »</a>
+               <a href="tracker" class="btn btn-primary btn-large">Check it out »</a>
              </h3>
              </div>
            </div>
@@ -144,9 +144,10 @@
          </div>
        </div> 
 
-    <script>window.jQuery || document.write('<script src="/js/jquery/jquery-1.7.1.min.js"><\/script>')</script>
-    <script src="/js/bootstrap/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
+    <%- js('/javascripts/jquery/jquery-1.7.1.min') %>
+    <%- js('/javascripts/bootstrap/bootstrap.min') %>
+    <%- js('/javascripts/highcharts/highcharts') %>
+    <%- js('/javascripts/script') %>
     </body>
 </html>
     

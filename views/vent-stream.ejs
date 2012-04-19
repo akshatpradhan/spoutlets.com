@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+        <%- css('/stylesheets/bootstrap') %>
 
         <!--[if lt IE 9]>
             <script src="/js/html5shiv/iepp.js"></script>
@@ -339,9 +339,9 @@
         
     </div>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-    <script>window.jQuery || document.write('<script src="/js/jquery/jquery-1.7.1.min.js"><\/script>')</script>
-    <script src="/js/bootstrap/bootstrap.min.js"></script>
-    <script src="/js/highcharts/highcharts.js"></script>
-    <script src="/js/script.js"></script>
+    <%- js('/javascripts/jquery/jquery-1.7.1.min') %>
+    <%- js('/javascripts/bootstrap/bootstrap.min') %>
+    <%- js('/javascripts/highcharts/highcharts') %>
+    <%- js('/javascripts/script') %>
     </body>
 </html>

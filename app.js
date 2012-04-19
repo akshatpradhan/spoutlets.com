@@ -9,6 +9,10 @@ var express = require('express')
 
 var app = express();
 
+// Asset pipeline
+var assets = require('connect-assets')({build: true});
+app.use(assets);
+
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');

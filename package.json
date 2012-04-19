@@ -6,6 +6,7 @@
     "start": "node app"
   },
   "dependencies": {
+    "connect-assets": "*",
     "ejs": "*",
     "express": "3.0.0alpha1",
     "less-middleware": "*"
