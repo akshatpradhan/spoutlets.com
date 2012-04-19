@@ -4241,7 +4241,8 @@ a:hover {
 .page-nav {
   float: left;
   margin-left: 20px;
-  width: 940px;
+  width: 620px;
+  width: 670px;
   height: 50px;
   padding: 0 0 0 270px;
   background: #f9f9f9;
