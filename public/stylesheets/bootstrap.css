@@ -4046,6 +4046,9 @@ a.thumbnail:hover {
 .icon-conversation-header {
   background-position: -160px -60px;
 }
+.icon-vector-path-circle-header {
+  background-position: -200px -60px;
+}
 .icon-user-header {
   background-position: -240px -60px;
 }
@@ -4241,10 +4244,10 @@ a:hover {
 .page-nav {
   float: left;
   margin-left: 20px;
-  width: 620px;
-  width: 670px;
+  width: 780px;
+  width: 800px;
   height: 50px;
-  padding: 0 0 0 270px;
+  padding: 0 0 0 140px;
   background: #f9f9f9;
   border-bottom: 1px solid #dcdcdc;
 }
@@ -4261,7 +4264,7 @@ a:hover {
 .nav-left-col {
   float: left;
   margin-left: 20px;
-  width: 220px;
+  width: 140px;
   padding-top: 20px;
 }
 .nav-left-col .nav-tabs {
@@ -4271,14 +4274,22 @@ a:hover {
   z-index: 10;
 }
 .nav-left-col a {
-  width: 180px;
+  width: 70px;
+  text-align: center;
   background-color: #e6e6e6;
+}
+.nav-left-col a i {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 2px auto 0 auto;
 }
 .nav-left-col .well {
   float: right;
   clear: both;
-  width: 145px;
-  margin: 30px 20px 10px 15px;
+  width: 120px;
+  margin: 30px 5px 10px 5px;
+  padding: 15px 5px;
   color: #808080;
 }
 .nav-left-col .well h5 {
@@ -4289,10 +4300,10 @@ a:hover {
 }
 .nav-left-col .venting-flow ul {
   margin: 20px 0 0 0;
-  padding-bottom: 15px;
 }
 .nav-left-col .venting-flow li {
   *zoom: 1;
+  font-size: 10px;
   margin: 10px 0 20px 0;
   border-bottom: 1px solid #dcdcdc;
 }
@@ -4304,6 +4315,9 @@ a:hover {
 .nav-left-col .venting-flow li:after {
   clear: both;
 }
+.nav-left-col .venting-flow li p {
+  font-size: 10px;
+}
 .nav-left-col .venting-flow li > div {
   margin: 0 0 0 40px;
 }
@@ -4312,7 +4326,7 @@ a:hover {
   margin-left: 20px;
   width: 700px;
   position: relative;
-  width: 680px !important;
+  width: 765px !important;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
 }
@@ -4337,21 +4351,21 @@ a:hover {
   float: left;
   margin-left: 20px;
   width: 460px;
-  width: 440px;
+  width: 525px;
 }
 .tab-content .pane-right-col .input-max {
-  width: 430px;
+  width: 515px;
 }
 .tab-content .pane-left-col-wide {
   float: left;
   margin-left: 20px;
-  width: 460px;
+  width: 540px;
 }
 .tab-content .pane-right-col-narrow {
   float: left;
   margin-left: 20px;
   width: 140px;
-  width: 180px;
+  width: 185px;
 }
 .tab-content .lnk-tag {
   display: inline-block;
@@ -4402,7 +4416,7 @@ a:hover {
   display: inline-block;
   width: 200px;
   height: 180px;
-  margin: 0 0 0 35px;
+  margin: 0 0 0 75px;
 }
 .section-col:first-child {
   margin-left: 20px;
@@ -4411,11 +4425,12 @@ a:hover {
   margin-bottom: 10px;
 }
 #chart-graph-mood {
-  width: 430px;
-  height: 200px;
+  width: 530px;
+  height: 210px;
+  margin-top: -25px;
 }
 #chart-graph {
-  width: 680px;
+  width: 770px;
 }
 .article-list {
   clear: both;
@@ -4437,11 +4452,11 @@ a:hover {
   margin-left: 20px;
   width: 620px;
   position: relative;
-  width: 640px;
+  width: 725px;
   padding-bottom: 10px;
 }
 .vent-form textarea {
-  width: 620px;
+  width: 702px;
   height: 20px;
   margin-bottom: 10px;
   padding: 12px 10px 9px 10px;
@@ -4556,8 +4571,8 @@ a:hover {
   border-bottom: none;
 }
 .vent .form-response textarea {
-  width: 550px;
-  sheight: 80px;
+  width: 635px;
+  height: 80px;
 }
 .comments li {
   margin: 35px 0;
