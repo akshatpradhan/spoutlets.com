@@ -31,5 +31,10 @@ nbproject
 .svn
 .CVS
 .idea
+
+# Node.js ignore folders
 node_modules
 builtAssets
+
+# Deployment scripts
+push.sh
