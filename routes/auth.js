@@ -1,3 +1,8 @@
+/**
+ * Authentication module
+ */
+
+var everyauth = require('everyauth');
 var crypto = require('crypto');
 var User = require('../models/User');
 
@@ -5,6 +10,7 @@ var User = require('../models/User');
 var salt = "f#@Xu^%Hg*YBCs";
 
 exports.addUser = addUser;
+exports.authenticate = authenticate;
 exports.encrypt = encrypt;
 exports.getUser = getUser;
 exports.removeUser = removeUser;
@@ -31,10 +37,31 @@ function addUser(username, password, callback) {
             callback(err);
         }
         else {
-            console.log('user saved', username, password);
+          //  console.log('user saved', username, password);
             callback(null, instance);
         }
 
+    });
+
+}
+
+// Authenticate
+function authenticate(username, password, callback) {
+
+    console.log('authenticating %s:%s', username, password);
+
+    // query the db for the given username
+    getUser(username, function(err, user) {
+        if (err) callback(err);
+        if (!user) return callback(new Error('cannot find user'));
+
+        // apply the same algorithm to the POSTed password, applying
+        // the hash against the pass / salt, if there is a match we
+        // found the user
+        if (user.password == encrypt(password, salt)) return callback(null, user);
+
+        // Otherwise password is invalid
+        callback(new Error('invalid password'));
     });
 
 }
@@ -49,7 +76,6 @@ function encrypt(msg, key) {
 
 // Retrieve user, null for non-existent
 function getUser(username, callback) {
-    console.log('ret');
     User.findOne({'username': username}, function(err, doc) {
         if (err) {
             callback(err);

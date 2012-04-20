@@ -35,24 +35,24 @@
                               <hgroup class="section-header">
                                   <h2>Almost there!</h2>
                               </hgroup>
-                              <form id="signin-form" class="form-horizontal">
+                              <form id="login-form" class="form-horizontal" action="/login" method="post">
                                   <fieldset>
                                     <div class="control-group">
                                       <label class="control-label" for="input01">Username</label>
                                       <div class="controls">
-                                        <input type="text" class="input-xlarge" id="input01">
+                                        <input type="text" class="input-xlarge" id="input01" name="login">
                                       </div>
                                     </div>
                                     <div class="control-group">
                                       <label class="control-label" for="input02">Password</label>
                                       <div class="controls">
-                                        <input type="password" class="input-xlarge" id="input02">
+                                        <input type="password" class="input-xlarge" id="input02" name="password">
                                      </div>
                                     </div>                            
                                 </fieldset>
                               </form>
                               <div class="form-actions">
-                                  <a href="#" class="btn btn-primary btn-large pull-right signin">Sign in</a>
+                                  <a href="#" class="btn btn-primary btn-large pull-right login">Sign in</a>
                               </div>
                           </div>
                       </div>  
@@ -71,7 +71,7 @@
                                     <div class="control-group">
                                       <label class="control-label" for="input01">Username</label>
                                       <div class="controls">
-                                        <input type="text" class="input-xlarge" name="username">
+                                        <input type="text" class="input-xlarge" name="login">
                                       </div>
                                     </div>
                                     <div class="control-group">

@@ -22,6 +22,20 @@ suite('auth', function() {
 
     });
 
+    test('authenticate should authorise a valid user', function(done) {
+
+        var username = "testUser" + Math.random();
+        var password = "testd";
+        auth.addUser(username, password, function(err, user) {
+            auth.authenticate(username, password, function(err, user) {
+                user.username.should.eql(username);
+                done();
+            });
+
+        });
+
+    });
+
     test('encrypt should return the same output for the same inputs', function(done) {
 
         var password = "sample";
@@ -83,7 +97,7 @@ suite('auth', function() {
     test('removeUser should remove user', function(done) {
 
         var username = "testUser" + Math.random();
-        users.addUser(username, "testPassword", "John", function(err, user) {
+        auth.addUser(username, "testPassword", function(err, user) {
             should.exist(user);
             auth.removeUser(username, function(err) {
                 auth.getUser(username, function(err, user) {
