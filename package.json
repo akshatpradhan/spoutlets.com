@@ -9,9 +9,10 @@
     "connect-assets": "2.1.9",
     "ejs": "0.7.1",
     "everyauth": "0.2.32",
-    "express": "3.0.0alpha1",
+    "express": "2.5.9",
     "less-middleware": "0.1.4",
     "mocha": "1.0.1",
-    "should": "0.6.1"
+    "should": "0.6.1",
+    "socket.io": "0.9.6"
   }
 }

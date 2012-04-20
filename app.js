@@ -1,11 +1,17 @@
-
 // Module dependencies.
 
 var express = require('express')
-  , routes = require('./routes')
-  , auth = require('./routes/auth.js')
-  , everyauth = require('everyauth')
-  , http = require('http');
+    , routes = require('./routes')
+    , auth = require('./routes/auth.js')
+    , everyauth = require('everyauth')
+    , http = require('http');
+
+// Access user
+var userHash = new Object();
+
+everyauth.everymodule.findUserById(function (userId, callback) {
+    callback(null, userHash[userId]);
+});
 
 // Everyauth authentication module
 everyauth.password
@@ -13,10 +19,10 @@ everyauth.password
     .postLoginPath('/login') // Uri path that your login form POSTs to
     .loginView('index.ejs')
     .authenticate(function (login, password) {
-        console.log('authenticating %s %s', login, password);
         var promise = this.Promise();
         auth.authenticate(login, password, function(err, user) {
             if (err) return promise.fulfill([err]);
+            userHash[user._id] = user;
             promise.fulfill(user);
         });
         return promise;
@@ -58,46 +64,60 @@ everyauth.password
     })
     .registerSuccessRedirect('/tracker'); // Where to redirect to after a successful registration
 
+var app = express.createServer(
+    express.bodyParser()
+    , express.static(__dirname + "/public")
+    , express.favicon()
+    , express.cookieParser()
+    , express.session({ secret: 'ht#Z$uayreve'})
+    , everyauth.middleware()
+);
 
+// View helpers
+everyauth.helpExpress(app, { userAlias: 'myUser' });
 
-var app = express();
+// Configuration
+
+app.configure(function () {
+    app.use(express.logger('dev'));
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'ejs');
+    app.use(express.methodOverride());
+    app.use(app.router);
+    app.use(require('less-middleware')({ src:__dirname + '/public' }));
+    //app.use(express.cookieParser('your secret hereAbc#96'));
+   // app.use(express.session({secret:'ereAbc#9'}));
+});
 
 // Asset pipeline
 var assets = require('connect-assets')({build: true});
 app.use(assets);
 
-app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'ejs');
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(require('less-middleware')({ src: __dirname + '/public' }));
-  app.use(express.static(__dirname + '/public'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret hereAbc#96'));
-  app.use(express.session());
-  app.use(everyauth.middleware());
-  app.use(app.router);
+// No layout for now
+app.set('view options', {
+    layout: false
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler());
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+app.configure('production', function(){
+    app.use(express.errorHandler());
 });
 
 // Getters
 app.get('/', routes.index);
-app.get('/meters', routes.meters);    
-app.get('/my-profile', routes['my-profile']);   
+app.get('/meters', routes.meters);
+app.get('/my-profile', routes['my-profile']);
 app.get('/patterns', routes.patterns);
-app.get('/tracker', routes.tracker);   
-app.get('/user-profile', routes['user-profile']);   
-app.get('/vent-stream', routes['vent-stream']);   
-app.get('/vent', routes.vent);   
-  
+app.get('/tracker', routes.tracker);
+app.get('/user-profile', routes['user-profile']);
+app.get('/vent-stream', routes['vent-stream']);
+app.get('/vent', routes.vent);
+
 // Posts
 app.post('/register', auth.register);
 
-http.createServer(app).listen(3000);
-
-console.log("Express server listening on port 3000");
+app.listen(3000);
+console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

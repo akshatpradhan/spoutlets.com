@@ -20,6 +20,9 @@ exports.patterns = function(req, res) {
 };
 
 exports.tracker = function(req, res) {
+    //console.log(everyauth);
+    console.log(req.loggedIn);
+    console.log(req.user);
     res.render('tracker.ejs');
 };
 
