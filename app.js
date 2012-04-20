@@ -1,10 +1,9 @@
 
-/**
- * Module dependencies.
- */
+// Module dependencies.
 
 var express = require('express')
   , routes = require('./routes')
+  , auth = require('./routes/auth.js')
   , http = require('http');
 
 var app = express();
@@ -31,15 +30,18 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Getters
 app.get('/', routes.index);
 app.get('/meters', routes.meters);    
 app.get('/my-profile', routes['my-profile']);   
-app.get('/patterns', routes.patterns);   
+app.get('/patterns', routes.patterns);
 app.get('/tracker', routes.tracker);   
 app.get('/user-profile', routes['user-profile']);   
 app.get('/vent-stream', routes['vent-stream']);   
 app.get('/vent', routes.vent);   
   
+// Posts
+app.post('/register', auth.register);
 
 http.createServer(app).listen(3000);
 

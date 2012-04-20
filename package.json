@@ -9,6 +9,8 @@
     "connect-assets": "2.1.9",
     "ejs": "0.7.1",
     "express": "3.0.0alpha1",
-    "less-middleware": "0.1.4"
+    "less-middleware": "0.1.4",
+    "mocha": "1.0.1",
+    "should": "0.6.1"
   }
 }

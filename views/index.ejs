@@ -35,7 +35,7 @@
                               <hgroup class="section-header">
                                   <h2>Almost there!</h2>
                               </hgroup>
-                              <form class="form-horizontal">
+                              <form id="signin-form" class="form-horizontal">
                                   <fieldset>
                                     <div class="control-group">
                                       <label class="control-label" for="input01">Username</label>
@@ -52,7 +52,7 @@
                                 </fieldset>
                               </form>
                               <div class="form-actions">
-                                  <a href="tracker.html" class="btn btn-primary btn-large pull-right">Sign in</a>
+                                  <a href="#" class="btn btn-primary btn-large pull-right signin">Sign in</a>
                               </div>
                           </div>
                       </div>  
@@ -66,24 +66,24 @@
                               <hgroup class="section-header">
                                   <h2>Almost there!</h2>
                               </hgroup>
-                              <form class="form-horizontal">
+                              <form id="register-form" class="form-horizontal" action="/register" method="post">
                                   <fieldset>
                                     <div class="control-group">
                                       <label class="control-label" for="input01">Username</label>
                                       <div class="controls">
-                                        <input type="text" class="input-xlarge" id="input01">
+                                        <input type="text" class="input-xlarge" id="username">
                                       </div>
                                     </div>
                                     <div class="control-group">
                                       <label class="control-label" for="input02">Password</label>
                                       <div class="controls">
-                                        <input type="password" class="input-xlarge" id="input02">
+                                        <input type="password" class="input-xlarge" id="password">
                                      </div>
                                     </div>                            
                                 </fieldset>
                               </form>
                               <div class="form-actions">
-                                  <a href="tracker.html" class="btn btn-primary btn-large pull-right">Register</a>
+                                  <a href="#" class="btn btn-primary btn-large pull-right register">Register</a>
                               </div>
                           </div>
                       </div>                       
@@ -148,6 +148,7 @@
     <%- js('/javascripts/bootstrap/bootstrap.min') %>
     <%- js('/javascripts/highcharts/highcharts') %>
     <%- js('/javascripts/script') %>
+    <%- js('/javascripts/spoutlets') %>
     </body>
 </html>
     
