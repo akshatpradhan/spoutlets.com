@@ -2,13 +2,15 @@
 
 var express = require('express')
     , routes = require('./routes')
-    , auth = require('./routes/auth.js')
+    , posts = require('./routes/posts')
+    , auth = require('./routes/auth')
     , everyauth = require('everyauth')
     , http = require('http');
 
 // Access user
 var userHash = new Object();
 
+// To be mongo-fied
 everyauth.everymodule.findUserById(function (userId, callback) {
     callback(null, userHash[userId]);
 });
@@ -118,6 +120,7 @@ app.get('/vent', routes.vent);
 
 // Posts
 app.post('/register', auth.register);
+app.post('/tracker', posts.tracker);
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

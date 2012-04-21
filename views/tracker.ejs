@@ -87,6 +87,10 @@
                                         <div class="mood-face rate10"><!-- --></div>
                                         <a href="#mood-rate" class="btn btn-primary" data-toggle="modal">Rate your mood</a>
                                     </div>
+                                    <br />
+                                    <div class="mood-status centered mood-feedback">
+                                        <!-- You have rated your mood a 5 -->
+                                    </div>
                                     <div class="modal hide fade" id="mood-rate">
                                        <div class="wrapper-modal">
                                             <hgroup class="section-header">
@@ -96,7 +100,7 @@
                                                 <img src="/img/placeholders/mood-status.png" width="900" height="180" />
                                             </div>
                                             <div class="centered">
-                                                <a href="#" class="btn btn-primary" data-dismiss="modal">Select</a>
+                                                <a href="#" class="btn btn-primary btn-mood-select" data-dismiss="modal">Select</a>
                                             </div>
                                        </div>
                                     </div>
@@ -193,5 +197,9 @@
     <%- js('/javascripts/bootstrap/bootstrap.min') %>
     <%- js('/javascripts/highcharts/highcharts') %>
     <%- js('/javascripts/script') %>
+    <%- js('/javascripts/tracker') %>
     </body>
 </html>
+Click here to see a quick user guide for Betfair Everywhere.
+Hide notification
+Need any help ?
