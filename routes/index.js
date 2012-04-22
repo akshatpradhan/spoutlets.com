@@ -7,6 +7,12 @@ exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
+exports.logout = function(req, res) {
+    res.session.destroy();
+    res.redirect('/');
+};
+
+
 exports.meters = function(req, res) {
     if (undefined === req.user) {
         res.redirect('/');

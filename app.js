@@ -110,6 +110,7 @@ app.configure('production', function(){
 
 // Getters
 app.get('/', routes.index);
+app.get('/logout', routes.logout);
 app.get('/meters', routes.meters);
 app.get('/my-profile', routes['my-profile']);
 app.get('/patterns', routes.patterns);
