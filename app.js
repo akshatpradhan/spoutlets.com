@@ -8,7 +8,7 @@ var express = require('express')
     , http = require('http');
 
 // Access user
-var userHash = new Object();
+var userHash = {};
 
 // To be mongo-fied
 everyauth.everymodule.findUserById(function (userId, callback) {
