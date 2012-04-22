@@ -4276,7 +4276,8 @@ a:hover {
 .nav-left-col a {
   width: 70px;
   text-align: center;
-  background-color: #e6e6e6;
+  padding-right: 18px !important;
+  padding-left: 15px !important;
 }
 .nav-left-col a i {
   display: block;
