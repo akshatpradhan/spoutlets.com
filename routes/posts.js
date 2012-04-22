@@ -1,7 +1,7 @@
 "use strict";
 
 var lib = require("../lib/spoutlib")
-    , tag = require('lib/tracker');
+    , tag = require('../lib/tag');
 
 exports.tracker = function(req, res) {
     
@@ -25,6 +25,7 @@ exports.tracker = function(req, res) {
             if (i < tags.length - 1) feedback += ", ";
             
             // Async add to database
+            tag.addTag(tags[i], function() {});
             
         }
         res.writeHead(200, {'Content-Type': 'text/plain'});

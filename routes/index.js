@@ -1,4 +1,4 @@
-
+'use strict';
 /*
  * GET home page.
  */
@@ -8,32 +8,59 @@ exports.index = function(req, res){
 };
 
 exports.meters = function(req, res) {
-    res.render('meters.ejs');
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else    
+        res.render('meters.ejs');
 };
 
 exports['my-profile'] = function(req, res) {
-    res.render('my-profile.ejs');
-}
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else
+        res.render('my-profile.ejs');
+};
 
 exports.patterns = function(req, res) {
-    res.render('patterns.ejs');
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else    
+        res.render('patterns.ejs');
 };
 
 exports.tracker = function(req, res) {
-    //console.log(everyauth);
-    console.log(req.loggedIn);
-    console.log(req.user);
-    res.render('tracker.ejs');
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else {
+       res.render('tracker.ejs'); 
+    }
+        
 };
 
 exports['user-profile'] = function(req, res) {
-    res.render('user-profile.ejs');
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else
+        res.render('user-profile.ejs');
 };
 
 exports['vent-stream'] = function(req, res) {
-    res.render('vent-stream.ejs');
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else
+        res.render('vent-stream.ejs');
 };
 
 exports.vent = function(req, res) {
-    res.render('vent.ejs');
+    if (undefined === req.user) {
+        res.redirect('/');
+    }
+    else    
+        res.render('vent.ejs');
 };
