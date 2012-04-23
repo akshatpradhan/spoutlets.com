@@ -2,7 +2,6 @@
  * Authentication module
  */
 
-var everyauth = require('everyauth');
 var crypto = require('crypto');
 var User = require('../models/User');
 
@@ -15,13 +14,17 @@ exports.encrypt = encrypt;
 exports.getUser = getUser;
 exports.removeUser = removeUser;
 
+/**
 exports.register = function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
+    console.log('adding user');
     addUser(username, password, function(err, user) {
+        console.log('user added');
+        req.user = user;
         res.redirect('/tracker');
     });
-}
+}*/
 
 // Add user to database
 function addUser(username, password, callback) {
@@ -37,7 +40,6 @@ function addUser(username, password, callback) {
             callback(err);
         }
         else {
-          //  console.log('user saved', username, password);
             callback(null, instance);
         }
 

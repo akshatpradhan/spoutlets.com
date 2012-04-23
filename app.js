@@ -4,6 +4,7 @@ var express = require('express')
     , routes = require('./routes')
     , posts = require('./routes/posts')
     , auth = require('./routes/auth')
+    , vents = require('./routes/vents')
     , everyauth = require('everyauth')
     , http = require('http');
 
@@ -12,6 +13,7 @@ var userHash = {};
 
 // To be mongo-fied
 everyauth.everymodule.findUserById(function (userId, callback) {
+    console.log('finding user: ' + userId);
     callback(null, userHash[userId]);
 });
 
@@ -54,11 +56,15 @@ everyauth.password
     .registerUser( function (newUserAttributes) {
 
         var promise = this.Promise();
-        console.log(newUserAttributes);
+       // console.log(newUserAttributes);
 
         auth.addUser(newUserAttributes.login, newUserAttributes.password, function(err, user) {
             if (err) return promise.fulfill([err]);
+            console.log('registered');
             promise.fulfill(user);
+            
+            // Allow the user to immediately sign in by storing
+            userHash[user._id] = user;
         });
 
         return promise;
@@ -110,6 +116,7 @@ app.configure('production', function(){
 
 // Getters
 app.get('/', routes.index);
+app.get('/api/vents', vents['/api/vents']);
 app.get('/logout', routes.logout);
 app.get('/meters', routes.meters);
 app.get('/my-profile', routes['my-profile']);
@@ -120,7 +127,7 @@ app.get('/vent-stream', routes['vent-stream']);
 app.get('/vent', routes.vent);
 
 // Posts
-app.post('/register', auth.register);
+//app.post('/register', auth.register);
 app.post('/tracker', posts.tracker);
 
 app.listen(3000);
