@@ -1,5 +1,5 @@
 /**
- * User authentication module using MongoDB for persistence
+ * User model
  * @author Don Nguyen
  */
 
