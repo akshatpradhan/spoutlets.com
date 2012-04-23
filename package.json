@@ -1,6 +1,6 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
+  "name": "spoutlets.com",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -13,6 +13,7 @@
     "less-middleware": "0.1.4",
     "mocha": "1.0.1",
     "should": "0.6.1",
-    "socket.io": "0.9.6"
+    "socket.io": "0.9.6",
+    "underscore": "1.3.3"
   }
 }
