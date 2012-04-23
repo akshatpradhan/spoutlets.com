@@ -1,3 +1,4 @@
+'use strict';
 (function ($) {
     
     var ventTemplate = '<article class="vent">' +
@@ -101,7 +102,6 @@
 
         render: function() {
 
-            var self = this;
             var rows = ventCollection.models;
             _.each(rows, (function (vent) {
                 var rowView = new VentRowView({model: vent});
