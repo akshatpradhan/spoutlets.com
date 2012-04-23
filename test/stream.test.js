@@ -12,7 +12,6 @@ var should = require('should');
 
 suite('stream', function() {
 
-
     test('getStreams should retrieve streams', function(done) {
 
         stream.getStreams(function(err, streams) {
