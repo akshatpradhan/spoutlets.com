@@ -115,7 +115,9 @@
                                         <div class="control-group pull-right hide vent-control">
                                             <select class="input-large">
                                                 <option>&mdash; Select a Stream &mdash;</option>
-                                                <option>&mdash; Stream &mdash;</option>
+                                                <% for (var i=0; i<streams.length; i++) { %>
+                                                    <option><%= streams[i].text %></option>
+                                                <% } %>
                                             </select>
                                             <button class="btn btn-primary" type="submit">Let it out!</button>
                                         </div>

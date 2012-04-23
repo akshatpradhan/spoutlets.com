@@ -55,14 +55,6 @@ exports['user-profile'] = function(req, res) {
         res.render('user-profile.ejs');
 };
 
-exports['vent-stream'] = function(req, res) {
-    if (undefined === req.user) {
-        res.redirect('/');
-    }
-    else
-        res.render('vent-stream.ejs');
-};
-
 exports.vent = function(req, res) {
     if (undefined === req.user) {
         res.redirect('/');

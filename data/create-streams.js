@@ -11,7 +11,7 @@ var stream = require("../lib/stream");
 var counter = 0;
 var streams = ["relationships", "anxiety", "depression", "work"];
 
-_.each(streams, function(text) {stream.addStream(text, done)});
+_.each(streams, function(text) {stream.addStream(text, done);});
 
 function done() {
     counter++;

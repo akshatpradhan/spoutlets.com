@@ -5,6 +5,7 @@ var express = require('express')
     , posts = require('./routes/posts')
     , auth = require('./routes/auth')
     , vents = require('./routes/vents')
+    , ventStream = require('./routes/vent-stream')
     , everyauth = require('everyauth')
     , http = require('http');
 
@@ -123,7 +124,7 @@ app.get('/my-profile', routes['my-profile']);
 app.get('/patterns', routes.patterns);
 app.get('/tracker', routes.tracker);
 app.get('/user-profile', routes['user-profile']);
-app.get('/vent-stream', routes['vent-stream']);
+app.get('/vent-stream', ventStream['vent-stream']);
 app.get('/vent', routes.vent);
 
 // Posts
