@@ -128,8 +128,8 @@ app.get('/vent-stream', ventStream['vent-stream']);
 app.get('/vent', routes.vent);
 
 // Posts
-//app.post('/register', auth.register);
 app.post('/tracker', posts.tracker);
+app.post('/vent-stream', ventStream['vent-stream-post']);
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

@@ -106,14 +106,15 @@
                             <section class="no-header">
                                <div class="well vent-form">
                                     <form action="#" class="form-inline" method="post">
+                                        <input type="hidden" name="username" value="<%= everyauth.user.username %>">
                                         <div class="control-group">
                                             <div class="hide vent-control btn-close">
                                                 <a class="close">&times;</a>
                                             </div>
-                                            <textarea class="bg-white" placeholder="Don't hold it in, Vent&hellip;"></textarea>
+                                            <textarea class="bg-white" name="vent" placeholder="Don't hold it in, Vent&hellip;"></textarea>
                                         </div>
                                         <div class="control-group pull-right hide vent-control">
-                                            <select class="input-large">
+                                            <select class="input-large" name="stream">
                                                 <option>&mdash; Select a Stream &mdash;</option>
                                                 <% for (var i=0; i<streams.length; i++) { %>
                                                     <option><%= streams[i].text %></option>
