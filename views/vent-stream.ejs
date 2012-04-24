@@ -106,21 +106,21 @@
                         <div class="row">
                             <section class="no-header">
                                <div class="well vent-form">
-                                    <form action="#" class="form-inline" method="post">
-                                        <input type="hidden" name="username" value="<%= everyauth.user.username %>">
+                                    <form action="#" class="form-inline" id="vent-form">
+                                        <input type="hidden" name="username" id="hidden-username" value="<%= everyauth.user.username %>">
                                         <div class="control-group">
                                             <div class="hide vent-control btn-close">
                                                 <a class="close">&times;</a>
                                             </div>
-                                            <textarea class="bg-white" name="vent" placeholder="Don't hold it in, Vent&hellip;"></textarea>
+                                            <textarea class="bg-white" name="vent" id="textarea-vent" placeholder="Don't hold it in, Vent&hellip;"></textarea>
                                         </div>
                                         <div class="control-group pull-right hide vent-control">
-                                            <select class="input-large" name="stream">
+                                            <select class="input-large" name="stream" id="select-stream">
                                                 <% for (var i=0; i<streams.length; i++) { %>
                                                     <option><%= streams[i].text %></option>
                                                 <% } %>
                                             </select>
-                                            <button class="btn btn-primary" type="submit">Let it out!</button>
+                                            <a class="btn btn-primary btn-let-it-out">Let it out!</a>
                                         </div>
                                     </form>
                                </div>

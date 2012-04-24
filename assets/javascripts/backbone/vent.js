@@ -96,9 +96,14 @@
     // Takes a collection as a parameter
     var VentView = Backbone.View.extend({
 
+        el:$('body'),
+        
+        events: {
+            "click .btn-let-it-out": "processVent"
+        },
+
         initialize: function() {
-            _.bindAll(this, "render");
-            this.model
+            _.bindAll(this, "processVent", "render");
             window.ventCollection = new VentCollection;
             var self = this;
             ventCollection.fetch({
@@ -117,6 +122,20 @@
             });
         },
 
+        processVent: function() {
+            var username = $('#hidden-username').val();
+            var text = $('#textarea-vent').val();
+            var stream = $('#select-stream').val();
+            var data = {username: username, text: text, stream: stream};
+            socket.emit('ventFromClient', data);
+
+            // Add to local model
+            ventCollection.addVent(data);
+            
+            // Reset interface
+            $('#textarea-vent').val('');
+    
+        },
         
         render: function() {
             var rows = ventCollection.models;
@@ -129,6 +148,9 @@
 
     });
     
+   // $('.btn-let-it-out').click(function() {
+  //      alert('jq');
+  //  });
     var socket = io.connect(location.hostname);
     socket.on('vent', function (data) {
       //  console.log(data);

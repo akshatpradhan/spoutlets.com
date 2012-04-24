@@ -92,10 +92,7 @@ if (heroku) {
     });
 }
 
-io.sockets.on('connection', function (socket) {
-    sio.setSocket(socket);
-  //
-});
+sio.setIO(io);
 
 // View helpers
 everyauth.helpExpress(app, { userAlias: 'myUser' });
