@@ -9,7 +9,7 @@ var _ = require('underscore');
 var db = require('../lib/db');
 var stream = require("../lib/stream");
 var counter = 0;
-var streams = ["relationships", "anxiety", "depression", "work"];
+var streams = ["Work", "School", "Relationships", "Mental Health"];
 
 _.each(streams, function(text) {stream.addStream(text, done);});
 
