@@ -51,6 +51,17 @@
 
         model:VentModel,
 
+        initialize: function() {
+            _.bindAll(this, 'addVent');
+        },
+
+        addVent: function(vent) {  
+           // console.log('adding vent');
+           // console.log(vent);
+           this.pop({silent: true});
+            this.unshift(vent);
+        },
+
         // Retrieve vents in JSON
         url : function() {
             return "/api/vents/";
@@ -87,21 +98,27 @@
 
         initialize: function() {
             _.bindAll(this, "render");
+            this.model
             window.ventCollection = new VentCollection;
             var self = this;
             ventCollection.fetch({
                 success: function() {
                     self.render(); 
                 },
-
                 error: function() {
                     console.log('error');
                 }
             });
+            
+            ventCollection.on('add', function(vent) {
+                $('.article-list').html('');
+                self.render(); 
+                
+            });
         },
 
+        
         render: function() {
-
             var rows = ventCollection.models;
             _.each(rows, (function (vent) {
                 var rowView = new VentRowView({model: vent});
@@ -110,6 +127,12 @@
  
         }     
 
+    });
+    
+    var socket = io.connect(location.hostname + ":3000");
+    socket.on('vent', function (data) {
+      //  console.log(data);
+        ventCollection.addVent(data);
     });
 
     new VentView();

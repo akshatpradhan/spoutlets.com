@@ -12,6 +12,7 @@
         <!--[if lt IE 9]>
             <script src="/js/html5shiv/iepp.js"></script>
         <![endif]-->
+        <script src="/socket.io/socket.io.js"></script>
 
     </head>
     <body>
@@ -115,7 +116,6 @@
                                         </div>
                                         <div class="control-group pull-right hide vent-control">
                                             <select class="input-large" name="stream">
-                                                <option>&mdash; Select a Stream &mdash;</option>
                                                 <% for (var i=0; i<streams.length; i++) { %>
                                                     <option><%= streams[i].text %></option>
                                                 <% } %>

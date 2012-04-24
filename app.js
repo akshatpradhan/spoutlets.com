@@ -7,7 +7,7 @@ var express = require('express')
     , vents = require('./routes/vents')
     , ventStream = require('./routes/vent-stream')
     , everyauth = require('everyauth')
-    , http = require('http');
+    , sio = require('./lib/socket');
 
 // Access user
 var userHash = {};
@@ -82,6 +82,13 @@ var app = express.createServer(
     , everyauth.middleware()
 );
 
+// Sockets
+var io = require('socket.io').listen(app);
+io.sockets.on('connection', function (socket) {
+    sio.setSocket(socket);
+  //
+});
+
 // View helpers
 everyauth.helpExpress(app, { userAlias: 'myUser' });
 
@@ -131,5 +138,6 @@ app.get('/vent', routes.vent);
 app.post('/tracker', posts.tracker);
 app.post('/vent-stream', ventStream['vent-stream-post']);
 
-app.listen(3000);
+var port = process.env.PORT || 3000;
+app.listen(port);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

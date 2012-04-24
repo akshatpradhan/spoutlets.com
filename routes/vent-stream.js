@@ -1,5 +1,6 @@
 'use strict';
 
+var socket = require("../lib/socket");
 var stream = require("../lib/stream");
 var vent = require("../lib/vent");
 var streams;
@@ -35,6 +36,9 @@ exports['vent-stream-post'] = function(req, res) {
         var text = req.body.vent;
         var stream = req.body.stream;
         vent.addVent(username, text, stream, function() {
+            // Broadcast after added to database
+            socket.getSocket().broadcast.emit('vent', {username: username, text: text, stream: stream});
+            
             res.redirect('/vent-stream');
         }); 
         
