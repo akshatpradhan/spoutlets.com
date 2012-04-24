@@ -1,6 +1,6 @@
 'use strict';
 
-var socket = require("../lib/socket");
+c
 var stream = require("../lib/stream");
 var vent = require("../lib/vent");
 var streams;
@@ -28,7 +28,7 @@ exports['vent-stream'] = function(req, res) {
 
 exports['vent-stream-post'] = function(req, res) {
     if (undefined === req.user) {
-        
+        res.redirect('/');
     }
     else {
         
