@@ -35,6 +35,12 @@ suite('auth', function() {
         var s5 = lib.millisToString(1000*60*60*24*6 + 2000);
         s5.should.eql("6 days ago");
 
+        var s6 = lib.millisToString(1000*60*60*24*7*21 + 2000);
+        s6.should.eql("21 weeks ago");
+
+        var s7 = lib.millisToString(1000*60*60*24*7*21 + 2000);
+        s7.should.eql("21 weeks ago");
+
         done();
 
     });
