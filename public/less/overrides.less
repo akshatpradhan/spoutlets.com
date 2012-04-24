@@ -100,6 +100,10 @@
   background-position: -160px -60px;
 }
 
+.icon-vector-path-circle-header {
+  background-position: -200px -60px;
+}
+
 .icon-user-header {
   background-position: -240px -60px;
 }
@@ -339,10 +343,10 @@ a, a:hover {
 }
 
 .page-nav {
-  .makeColumn(12);
-
+  .makeColumn(10);
+  width: 800px;
   height: 50px;
-  padding: 0 0 0 270px;
+  padding: 0 0 0 140px;
   background: @bg_color;
   border-bottom: 1px solid @border_color;
  
@@ -359,7 +363,7 @@ a, a:hover {
 }
 
 .nav-left-col {
-  .makeColumn(3);
+  .makeColumn(2);
 
   padding-top: 20px;
     
@@ -367,20 +371,29 @@ a, a:hover {
     position: relative;
     float: right !important;
     margin: 0 -1px 0 0 !important;
+    padding-bottom: 20px;
     z-index: 10;
   }
 
   a {
-    width: 180px;
-    background-color: @bg_highlight_color;
+    width: 105px;
+    text-align: center;
+    
+    i {
+      display: block;
+      width: 32px;
+      height: 32px;
+      margin: 2px auto 0 auto;
+    }
   }
 
   .well {
     .pull-right;
     
     clear: both;
-    width: 145px;
-    margin: 30px 20px 10px 15px;
+    width: 120px;
+    margin: 30px 5px 10px 5px;
+    padding: 15px 5px;
     color: @grey_color;
 
     h5 {
@@ -396,15 +409,19 @@ a, a:hover {
         
     ul {
       margin: 20px 0 0 0;
-      padding-bottom: 15px;
     }
 
     li {
       .clearfix;
 
+      font-size: 10px;
       margin: 10px 0 20px 0;
       border-bottom: 1px solid @border_color;
             
+      p {
+        font-size: 10px;
+      }
+
       > div {
         margin: 0 0 0 40px;
       }            
@@ -416,7 +433,7 @@ a, a:hover {
   .makeColumn(9);
 
   position: relative;
-  width: 680px !important;
+  width: 765px !important;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
 
@@ -442,21 +459,21 @@ a, a:hover {
   .pane-right-col {
     .makeColumn(6);
     
-    width: 440px;
+    width: 525px;
 
     .input-max {
-      width: 430px;
+      width: 515px;
     }
   }
 
   .pane-left-col-wide {
-    .makeColumn(6);
+    .makeColumn(7);
   }
 
   .pane-right-col-narrow {
     .makeColumn(2);
     
-    width: 180px;
+    width: 185px;
   }
 
   .lnk-tag {
@@ -518,7 +535,7 @@ a, a:hover {
   display: inline-block;
   width: 200px;
   height: 180px;
-  margin: 0 0 0 35px;
+  margin: 0 0 0 75px;
 }
 
 .section-col:first-child {
@@ -530,12 +547,13 @@ a, a:hover {
 }
 
 #chart-graph-mood {
-  width: 430px;
-  height: 200px;
+  width: 530px;
+  height: 210px;
+  margin-top: -25px;
 }
 
 #chart-graph {
-  width: 680px;
+  width: 770px;
 }
 
 .article-list {
@@ -562,11 +580,11 @@ a, a:hover {
   .makeColumn(8);
   
   position: relative;
-  width: 640px;
+  width: 725px;
   padding-bottom: 10px;
 
   textarea {
-    width: 620px;
+    width: 702px;
     height: 20px;
     margin-bottom: 10px;
     padding: 12px 10px 9px 10px;
@@ -607,7 +625,6 @@ a, a:hover {
     height: 125px;
     //background-color: @dark_grey_color;
     border: 1px solid lighten(@light_grey_color, 20%);
-
 
     span {
       display: block;
@@ -702,8 +719,8 @@ a, a:hover {
     border-bottom: none;
     
     textarea {
-      width: 550px;      
-      sheight: 80px;
+      width: 635px;      
+      height: 80px;
     }
   }
 }

@@ -98,8 +98,12 @@ $(document).ready(function() {
     },
     tooltip: {
       formatter: function() {
-          return ''+
-          Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y) +'';
+          var formatterString = Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y);
+
+          if (this.point.config[2] != undefined) {
+            formatterString += '<br />Comment: ' + this.point.config[2].comment;
+          };
+          return formatterString;
       },
     },
     plotOptions: {
@@ -125,15 +129,16 @@ $(document).ready(function() {
         pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
       }
     },
-    series: [{
-      name: 'Your mood',
-      data: [2,3,4,5,6,7,9,9,9,8,7,7,7,8,6,4,2,7,1,4,9,5,3,2,4,3,3,2,5,3,8,4,9,8,2,5,6,7,8,5,3,2,4,9,7,6,4,4]
-
-    }, {
-      name: 'Other moods',
-      data: [3,3,4,5,6,5,5,5,5,5,5,6,6,8,6,8,6,5,4,5,5,4,6,7,8,9,9,8,8,7,6,6,6,7,5,5,5,5,6,6,7,7,9,9,8,7,6,5,7]
-    }]
-    ,
+  series: [{
+     name: 'Rating',
+     data: [
+       [Date.UTC(2012, 1, 1, 8, 54), 3, {comment: "#bodysucks"}],
+       [Date.UTC(2012, 1, 2, 7, 22), 5, {comment: "#lesssick"}],
+       [Date.UTC(2012, 1, 3, 11, 02), 5 ],  
+       [Date.UTC(2012, 1, 5, 10, 16), 7  ],
+       [Date.UTC(2012, 1, 6, 22, 03), 5  ],
+       [Date.UTC(2012, 1, 7, 20, 59), 4  ]
+    ]}],
     navigation: {
       menuItemStyle: {
         fontSize: '10px'
@@ -225,8 +230,12 @@ $(document).ready(function() {
     },
     tooltip: {
       formatter: function() {
-          return ''+
-          Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y) +'';
+          var formatterString = Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y);
+
+          if (this.point.config[2] != undefined) {
+            formatterString += '<br />Comment: ' + this.point.config[2].comment;
+          };
+          return formatterString;
       },
     },
     plotOptions: {
@@ -253,14 +262,15 @@ $(document).ready(function() {
       }
     },
     series: [{
-      name: 'Your mood',
-      data: [2,3,4,5,6,7,9,9,9,8,7,7,7,8,6,4,2,7,1,4,9,5,3,2,4,3,3,2,5,3,8,4,9,8,2,5,6,7,8,5,3,2,4,9,7,6,4,4]
-
-    }, {
-      name: 'Other moods',
-      data: [3,3,4,5,6,5,5,5,5,5,5,6,6,8,6,8,6,5,4,5,5,4,6,7,8,9,9,8,8,7,6,6,6,7,5,5,5,5,6,6,7,7,9,9,8,7,6,5,7]
-    }]
-    ,
+       name: 'Rating',
+       data: [
+         [Date.UTC(2012, 1, 1, 8, 54), 3, {comment: "#bodysucks"}],
+         [Date.UTC(2012, 1, 2, 7, 22), 5, {comment: "#lesssick"}],
+         [Date.UTC(2012, 1, 3, 11, 02), 5 ],  
+         [Date.UTC(2012, 1, 5, 10, 16), 7  ],
+         [Date.UTC(2012, 1, 6, 22, 03), 5  ],
+         [Date.UTC(2012, 1, 7, 20, 59), 4  ]
+      ]}],
     navigation: {
       menuItemStyle: {
         fontSize: '10px'
