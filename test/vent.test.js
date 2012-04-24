@@ -10,6 +10,9 @@ var vent = require("../lib/vent");
 var assert = require("assert");
 var should = require('should');
 
+var db = require('../lib/db');
+db.setLocal(true);
+
 suite('vent', function() {
 
     test('addVent should add a new vent without error', function(done) {

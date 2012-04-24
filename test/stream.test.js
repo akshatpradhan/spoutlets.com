@@ -10,6 +10,9 @@ var stream = require("../lib/stream");
 var assert = require("assert");
 var should = require('should');
 
+var db = require('../lib/db');
+db.setLocal(true);
+
 suite('stream', function() {
 
     test('getStreams should retrieve streams', function(done) {

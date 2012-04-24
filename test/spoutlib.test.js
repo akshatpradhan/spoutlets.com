@@ -14,5 +14,11 @@ suite('auth', function() {
         done();
 
     });
+
+    test('millisSecond should return tags', function(done) {
+
+        done();
+
+    });
     
 });

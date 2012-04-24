@@ -4,6 +4,9 @@
  * @author Don Nguyen
  */
 
+var db = require('../lib/db');
+db.setLocal(true);
+
 var auth = require("../routes/auth");
 var assert = require("assert");
 var should = require('should');
