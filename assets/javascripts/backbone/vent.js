@@ -129,7 +129,7 @@
 
     });
     
-    var socket = io.connect(location.hostname + ":3000");
+    var socket = io.connect(location.hostname);
     socket.on('vent', function (data) {
       //  console.log(data);
         ventCollection.addVent(data);
