@@ -1,5 +1,6 @@
 'use strict';
 
+var socket = require("../lib/socket");
 var stream = require("../lib/stream");
 var vent = require("../lib/vent");
 var streams;
