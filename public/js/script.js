@@ -439,5 +439,12 @@ $('.vent-mood, .mood-options span').click(function() {
   $(this).parent().parent().find('.mood-options').fadeToggle('slow');
 })
 
+// Issue #55: Support circle pop-up
+
+$('.circle-name').click(function(e) {
+  e.preventDefault();
+  $('.pop-up').fadeOut('fast');
+  $(this).parent().find('> .pop-up').fadeToggle('fast');
+});
 
 });

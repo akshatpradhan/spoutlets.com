@@ -4116,34 +4116,49 @@ a.thumbnail:hover {
   background: #ffffff url(../img/sprite_moods.png) 0 0 no-repeat;
   cursor: pointer;
 }
-.options-rate1 {
+.mood-face-small {
+  width: 30px;
+  height: 30px;
+  background: #ffffff url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+.options-rate1,
+.s-rate1 {
   background-position: 3px -118px !important;
 }
-.options-rate2 {
+.options-rate2,
+.s-rate2 {
   background: #aaaaaa !important;
 }
-.options-rate3 {
+.options-rate3,
+.s-rate3 {
   background: #aaaaaa !important;
 }
-.options-rate4 {
+.options-rate4,
+.s-rate4 {
   background-position: -118px -118px !important;
 }
-.options-rate5 {
+.options-rate5,
+.s-rate5 {
   background: #aaaaaa !important;
 }
-.options-rate6 {
+.options-rate6,
+.s-rate6 {
   background: #aaaaaa !important;
 }
-.options-rate7 {
+.options-rate7,
+.s-rate7 {
   background: #aaaaaa !important;
 }
-.options-rate8 {
+.options-rate8,
+.s-rate8 {
   background-position: -278px -118px !important;
 }
-.options-rate9 {
+.options-rate9,
+.s-rate9 {
   background-position: -318px -118px !important;
 }
-.options-rate10 {
+.options-rate10,
+.s-rate10 {
   background-position: -358px -118px !important;
 }
 body {
@@ -4686,4 +4701,80 @@ a[href="#mood-rate"] {
 }
 .modal-form form {
   padding-bottom: 10px;
+}
+.form-name-search {
+  clear: both;
+  padding: 0 15px 0 0;
+}
+.support-circle {
+  padding: 20px 0 0 30px;
+}
+.support-circle li {
+  position: relative;
+}
+.support-circle li .circle-name {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: block;
+  padding: 20px;
+  border: 1px solid #aaaaaa;
+}
+.support-circle li .circle-name:hover {
+  text-decoration: none;
+  border-color: #404040;
+}
+.support-circle li .circle-name:active,
+.support-circle li .circle-name:focus {
+  outline: 0;
+}
+.support-circle li .mood-face-small {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+.support-circle li .name {
+  position: relative;
+  top: -10px;
+  left: 0;
+}
+.support-circle li .pop-up {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  z-index: 9999;
+  width: 210px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: -4px 0 8px #c3c3c3;
+}
+.support-circle li .pop-up header {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 0 0 15px 0;
+  padding: 5px 10px;
+  background: #eeeeee;
+}
+.support-circle li .pop-up header small {
+  font-size: 11px;
+  font-style: italic;
+}
+.support-circle li .pop-up h5 {
+  margin: 0 0 10px 0;
+}
+.support-circle li .pop-up .history-item {
+  display: block;
+}
+.support-circle li .pop-up:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: -9px;
+  width: 10px;
+  height: 20px;
+  background: url(../img/sprite_main.png) -90px -110px no-repeat;
 }

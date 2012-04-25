@@ -184,43 +184,59 @@
   cursor: pointer;
 }
 
-.options-rate1 {
+.mood-face-small {
+  width: 30px;
+  height: 30px;
+  background: #fff url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+
+.options-rate1,
+.s-rate1 {
   background-position: 3px -118px !important;
 }
 
-.options-rate2 {
+.options-rate2,
+.s-rate2 {
   background: @light_grey_color !important;
 }
 
-.options-rate3 {
+.options-rate3,
+.s-rate3 {
   background: @light_grey_color !important;
 }
 
-.options-rate4 {
+.options-rate4,
+.s-rate4 {
   background-position: -118px -118px !important;
 }
 
-.options-rate5 {
+.options-rate5,
+.s-rate5 {
   background: @light_grey_color !important;
 }
 
-.options-rate6 {
+.options-rate6,
+.s-rate6 {
   background: @light_grey_color !important;
 }
 
-.options-rate7 {
+.options-rate7,
+.s-rate7 {
   background: @light_grey_color !important;
 }
 
-.options-rate8 {
+.options-rate8,
+.s-rate8 {
   background-position: -278px -118px !important;
 }
 
-.options-rate9 {
+.options-rate9,
+.s-rate9 {
   background-position: -318px -118px !important;
 }
 
-.options-rate10 {
+.options-rate10,
+.s-rate10 {
   background-position: -358px -118px !important;
 }
 
@@ -865,3 +881,91 @@ a[href="#mood-rate"] {
 .modal-form form {
   padding-bottom: 10px;
 }
+
+.form-name-search {
+  clear: both;
+  padding: 0 15px 0 0;
+}
+
+.support-circle {
+  padding: 20px 0 0 30px;
+  
+  li {
+    position: relative;
+
+    .circle-name {
+      .border-radius(5px);
+
+      display: block;
+      padding: 20px;
+      border: 1px solid @light_grey_color;      
+
+      &:hover {
+        text-decoration: none;
+        border-color: @dark_grey_color;
+      }
+
+      &:active,
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .mood-face-small {
+      display: inline-block;
+      margin: 0 15px 0 0;
+    }
+
+    .name {
+      position: relative;
+      top: -10px;
+      left: 0;
+    }
+
+    .pop-up {
+      .border-radius(5px);
+
+      position: absolute;
+      top: 0;
+      left: 200px;
+      z-index: 9999;
+      width: 210px;
+      padding: 10px;
+      background: #fff;
+      box-shadow: -4px 0 8px lighten(@light_grey_color, 10%);
+
+      header {
+        .border-radius(3px);
+
+        margin: 0 0 15px 0;
+        padding: 5px 10px;
+        background: @grayLighter;
+
+        small {
+          font-size: 11px;
+          font-style: italic;
+        }
+      }
+
+      h5 {
+        margin: 0 0 10px 0;
+      }
+
+      .history-item {
+        display: block;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: -9px;
+        width: 10px;
+        height: 20px;
+        background: url(../img/sprite_main.png) -90px -110px no-repeat;
+      }
+
+    }
+  }
+} 
