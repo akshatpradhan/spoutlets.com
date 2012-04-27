@@ -1,4 +1,4 @@
-var chart;
+var chart, chart_share;
 
 Highcharts.Chart.prototype.tooltipFormatter = function(mood) {
   if (mood <= 2) {
@@ -280,8 +280,7 @@ $(document).ready(function() {
 };
 
 if ($('#chart-graph-meters').length) {
-  console.log('#chart-graph-meters here');
-  chart = new Highcharts.Chart({
+  chart_share = new Highcharts.Chart({
     chart: {
       renderTo: 'chart-graph-meters'
     },
@@ -373,7 +372,7 @@ if ($('#chart-graph-meters').length) {
     },
     plotOptions: {
       spline: {
-        lineWidth: 4,
+        lineWidth: 2,
         states: {
           hover: {
             lineWidth: 5
@@ -423,6 +422,91 @@ if ($('#chart-graph-meters').length) {
     }
   });
 };     
+
+if ($('#share-mood-graph').length) {
+  chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'share-mood-graph',
+      width: 300,
+      height: 100
+    },
+    title: {
+      text: null
+    },
+    subtitle: {
+      text: null
+    },
+    xAxis: {
+      labels: {
+        enabled: false
+      }
+    },
+    yAxis: {
+      title: {
+        text: 'Mood'
+      },
+      labels: {
+        enabled: false
+      },
+      min: 0,
+      max: 10,
+      minorGridLineWidth: 0,
+      gridLineWidth: 0,
+      alternateGridColor: null,
+    },
+    tooltip: {
+      formatter: function() {
+          var formatterString = Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y);
+
+          if (this.point.config[2] != undefined) {
+            formatterString += '<br />Comment: ' + this.point.config[2].comment;
+          };
+          return formatterString;
+      },
+    },
+    plotOptions: {
+      spline: {
+        lineWidth: 1,
+        states: {
+          hover: {
+            lineWidth: 5
+          }
+        },
+        marker: {
+          enabled: false,
+          states: {
+            hover: {
+              enabled: true,
+              symbol: 'circle',
+              radius: 5,
+              lineWidth: 1
+            }
+          }
+        },
+        pointInterval: 3600000, // one hour
+        pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
+      }
+    },
+  legend: {
+    enabled: false
+  },
+  series: [{
+     data: [
+       [Date.UTC(2012, 1, 1, 8, 54), 3, {comment: "#bodysucks"}],
+       [Date.UTC(2012, 1, 2, 7, 22), 5, {comment: "#lesssick"}],
+       [Date.UTC(2012, 1, 3, 11, 02), 5],  
+       [Date.UTC(2012, 1, 5, 10, 16), 7],
+       [Date.UTC(2012, 1, 6, 22, 03), 5],
+       [Date.UTC(2012, 1, 7, 20, 59), 4]
+    ]}
+    ],
+    navigation: {
+      menuItemStyle: {
+        fontSize: '10px'
+      }
+    }
+  });
+};  
 
 // Issue #23: Relate Button Increase by 1
 

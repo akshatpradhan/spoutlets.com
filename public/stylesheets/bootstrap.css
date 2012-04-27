@@ -4781,3 +4781,21 @@ a[href="#mood-rate"] {
   height: 20px;
   background: url(../img/sprite_main.png) -90px -110px no-repeat;
 }
+.share-mood-data {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+.share-mood-data #share-mood-graph {
+  float: left;
+  margin-left: 20px;
+  width: 300px;
+  margin: 20px 20px 0 0;
+  height: 100px;
+}
+.share-mood-data h5 {
+  margin: 55px 0 0 0;
+}
