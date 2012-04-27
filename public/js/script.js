@@ -277,7 +277,152 @@ $(document).ready(function() {
       }
     }
   });
-  }     
+};
+
+if ($('#chart-graph-meters').length) {
+  console.log('#chart-graph-meters here');
+  chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'chart-graph-meters'
+    },
+    title: {
+      text: 'Mood Graph'
+    },
+    subtitle: {
+      text: null
+    },
+    xAxis: {
+      labels: {
+        enabled: false
+      }
+    },
+    yAxis: {
+      title: {
+        text: 'Mood'
+      },
+      labels: {
+        enabled: false
+      },
+      min: 0,
+      max: 10,
+      minorGridLineWidth: 0,
+      gridLineWidth: 0,
+      alternateGridColor: null,
+      plotBands: [{ 
+        from: 0,
+        to: 2,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Very Unhappy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 2,
+        to: 4,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Unhappy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, 
+      { 
+        from: 4,
+        to: 6,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Ok',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 6,
+        to: 8,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Happy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }, {
+        from: 8,
+        to: 10,
+        color: 'rgba(0, 0, 0, 0)',
+        label: {
+          text: 'Very Happy',
+          style: {
+            color: '#606060'
+          }
+        }
+      }]
+    },
+    tooltip: {
+      formatter: function() {
+          var formatterString = Highcharts.dateFormat('%e. %b %Y, %H:00', this.x) +': '+ chart.tooltipFormatter(this.y);
+
+          if (this.point.config[2] != undefined) {
+            formatterString += '<br />Comment: ' + this.point.config[2].comment;
+          };
+          return formatterString;
+      },
+    },
+    plotOptions: {
+      spline: {
+        lineWidth: 4,
+        states: {
+          hover: {
+            lineWidth: 5
+          }
+        },
+        marker: {
+          enabled: false,
+          states: {
+            hover: {
+              enabled: true,
+              symbol: 'circle',
+              radius: 5,
+              lineWidth: 1
+            }
+          }
+        },
+        pointInterval: 3600000, // one hour
+        pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
+      }
+    },
+  series: [{
+     name: 'You',
+     data: [
+       [Date.UTC(2012, 1, 1, 8, 54), 3, {comment: "#bodysucks"}],
+       [Date.UTC(2012, 1, 2, 7, 22), 5, {comment: "#lesssick"}],
+       [Date.UTC(2012, 1, 3, 11, 02), 5],  
+       [Date.UTC(2012, 1, 5, 10, 16), 7],
+       [Date.UTC(2012, 1, 6, 22, 03), 5],
+       [Date.UTC(2012, 1, 7, 20, 59), 4]
+    ]},
+    {
+     name: 'Spoutlets',
+     data: [
+       [Date.UTC(2012, 1, 1, 8, 54), 2],
+       [Date.UTC(2012, 1, 2, 4, 22), 3],
+       [Date.UTC(2012, 1, 3, 11, 02), 3],  
+       [Date.UTC(2012, 1, 5, 10, 16), 5],
+       [Date.UTC(2012, 1, 6, 12, 03), 5],
+       [Date.UTC(2012, 1, 6, 20, 02), 5],
+       [Date.UTC(2012, 1, 7, 12, 49), 4]
+    ]}
+    ],
+    navigation: {
+      menuItemStyle: {
+        fontSize: '10px'
+      }
+    }
+  });
+};     
 
 // Issue #23: Relate Button Increase by 1
 

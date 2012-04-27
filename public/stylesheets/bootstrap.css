@@ -4447,6 +4447,9 @@ a:hover {
 #chart-graph {
   width: 770px;
 }
+#chart-graph-meters {
+  margin-top: 20px;
+}
 .article-list {
   clear: both;
 }
