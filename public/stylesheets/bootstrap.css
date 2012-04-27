@@ -4058,8 +4058,32 @@ a.thumbnail:hover {
   padding-bottom: 10px;
   background: url(../img/sprite_moods.png) 0 0 no-repeat;
 }
+.rate1 {
+  background-position: 0 0;
+}
+.rate2 {
+  background-position: -110px 0;
+}
+.rate3 {
+  background-position: -220px 0;
+}
 .rate4 {
   background-position: -330px 0;
+}
+.rate5 {
+  background-position: -440px 0;
+}
+.rate6 {
+  background-position: -550px 0;
+}
+.rate7 {
+  background-position: -660px 0;
+}
+.rate8 {
+  background-position: -770px 0;
+}
+.rate9 {
+  background-position: -880px 0;
 }
 .rate10 {
   background-position: -990px 0;
@@ -4077,14 +4101,32 @@ a.thumbnail:hover {
 .vent-rate1 {
   background-position: 0 -170px;
 }
+.vent-rate2 {
+  background-position: -70 -170px;
+}
+.vent-rate3 {
+  background-position: -140 -170px;
+}
 .vent-rate4 {
   background-position: -210px -170px;
+}
+.vent-rate5 {
+  background-position: -280px -170px;
+}
+.vent-rate6 {
+  background-position: -350px -170px;
+}
+.vent-rate7 {
+  background-position: -420px -170px;
 }
 .vent-rate8 {
   background-position: -490px -170px;
 }
 .vent-rate9 {
   background-position: -560px -170px;
+}
+.vent-rate10 {
+  background-position: -630px -170px;
 }
 .venting-timeline-mood {
   float: left;
@@ -4094,14 +4136,45 @@ a.thumbnail:hover {
   margin: 0 10px 0 0;
   background: url(../img/sprite_moods.png) 0 0 no-repeat;
 }
-.timeline-rate1 {
-  background-position: 0 -120px;
+.timeline-rate1,
+.s-rate1 {
+  background-position: 0 -120px !important;
 }
-.timeline-rate4 {
-  background-position: -120px -120px;
+.timeline-rate2,
+.s-rate2 {
+  background-position: -40px -120px !important;
 }
-.timeline-rate9 {
-  background-position: -360px -120px;
+.timeline-rate3,
+.s-rate3 {
+  background-position: -80px -120px !important;
+}
+.timeline-rate4,
+.s-rate4 {
+  background-position: -120px -120px !important;
+}
+.timeline-rate5,
+.s-rate5 {
+  background-position: -160px -120px !important;
+}
+.timeline-rate6,
+.s-rate6 {
+  background-position: -200px -120px !important;
+}
+.timeline-rate7,
+.s-rate7 {
+  background-position: -240px -120px !important;
+}
+.timeline-rate8,
+.s-rate8 {
+  background-position: -280px -120px !important;
+}
+.timeline-rate9,
+.s-rate9 {
+  background-position: -320px -120px !important;
+}
+.timeline-rate10,
+.s-rate10 {
+  background-position: -360px -120px !important;
 }
 .mood-options span {
   -webkit-border-radius: 2px;
@@ -4121,44 +4194,34 @@ a.thumbnail:hover {
   height: 30px;
   background: #ffffff url(../img/sprite_moods.png) 0 0 no-repeat;
 }
-.options-rate1,
-.s-rate1 {
+.options-rate1 {
   background-position: 3px -118px !important;
 }
-.options-rate2,
-.s-rate2 {
-  background: #aaaaaa !important;
+.options-rate2 {
+  background-position: -37px -118px !important;
 }
-.options-rate3,
-.s-rate3 {
-  background: #aaaaaa !important;
+.options-rate3 {
+  background-position: -77px -118px !important;
 }
-.options-rate4,
-.s-rate4 {
-  background-position: -118px -118px !important;
+.options-rate4 {
+  background-position: -117px -118px !important;
 }
-.options-rate5,
-.s-rate5 {
-  background: #aaaaaa !important;
+.options-rate5 {
+  background-position: -157px -118px !important;
 }
-.options-rate6,
-.s-rate6 {
-  background: #aaaaaa !important;
+.options-rate6 {
+  background-position: -197px -118px !important;
 }
-.options-rate7,
-.s-rate7 {
-  background: #aaaaaa !important;
+.options-rate7 {
+  background-position: -237px -118px !important;
 }
-.options-rate8,
-.s-rate8 {
-  background-position: -278px -118px !important;
+.options-rate8 {
+  background-position: -277px -118px !important;
 }
-.options-rate9,
-.s-rate9 {
-  background-position: -318px -118px !important;
+.options-rate9 {
+  background-position: -317px -118px !important;
 }
-.options-rate10,
-.s-rate10 {
+.options-rate10 {
   background-position: -358px -118px !important;
 }
 body {
@@ -4252,6 +4315,33 @@ a:hover {
   padding: 2px;
   vertical-align: top;
   background: url(../img/sprite_moods.png) 0 0 no-repeat;
+}
+.greetings-rate1 {
+  background-position: -440px -120px;
+}
+.greetings-rate2 {
+  background-position: -480px -120px;
+}
+.greetings-rate3 {
+  background-position: -520px -120px;
+}
+.greetings-rate4 {
+  background-position: -560px -120px;
+}
+.greetings-rate5 {
+  background-position: -600px -120px;
+}
+.greetings-rate6 {
+  background-position: -640px -120px;
+}
+.greetings-rate7 {
+  background-position: -680px -120px;
+}
+.greetings-rate8 {
+  background-position: -720px -120px;
+}
+.greetings-rate9 {
+  background-position: -760px -120px;
 }
 .greetings-rate10 {
   background-position: -800px -120px;
