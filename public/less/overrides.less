@@ -109,6 +109,7 @@
 }
 
 .mood-face {
+  display: block;
   width: 100px;
   height: 100px;
   padding-bottom: 10px;
@@ -919,12 +920,33 @@ a[href="#mood-rate"] {
 
 #mood-rate {
   margin-top: -140px;
-  margin-left: -940px / 2;
-  width: 940px;
+  margin-left: -1080px / 2;
+  width: 1080px;
   border: 4px solid black;
 
   .mood-form {
-    margin: -10px 0 15px 0;
+    margin: 10px 0 15px 0;
+
+    a {
+      display: inline-block;
+      opacity: 0.6;
+      -webkit-transition-property: opacity;
+      -webkit-transition-duration: .5s;
+      -moz-transition-property: opacity;
+      -moz-transition-duration: .5s;  
+      -o-transition-property: opacity;
+      -o-transition-duration: .5s;        
+    }
+
+    a:hover {
+      opacity: 1;
+      -webkit-transition-property: opacity;
+      -webkit-transition-duration: .5s;
+      -moz-transition-property: opacity;
+      -moz-transition-duration: .5s;  
+      -o-transition-property: opacity;
+      -o-transition-duration: .5s;        
+    }
   }
 }
 
